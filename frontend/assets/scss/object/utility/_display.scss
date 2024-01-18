@@ -1,0 +1,137 @@
+.u-display
+{
+    &--block
+    {
+        display: block;
+    }
+
+    &--inline-block
+    {
+        display: inline-block;
+    }
+    &--flex
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &--grid
+    {
+        display: grid;
+    }
+    &--none
+    {
+        display: none;
+    }
+}
+
+.u-flex
+{
+    &__justify_content
+    {
+        &--center
+        {
+            justify-content: center;
+        }
+        &--between
+        {
+            justify-content: space-between;
+        }
+        &--around
+        {
+            justify-content: space-around;
+        }
+    }
+    &__align_items
+    {
+        &--center
+        {
+            align-items: center;
+        }
+        &--baseline
+        {
+            align-items: baseline;
+        }
+    }
+    &__gap
+    {
+        &--0_5rem
+        {
+            gap: .5rem;
+        }
+        &--1rem
+        {
+            gap: 1rem;
+        }
+        &--2rem
+        {
+            gap: 2rem;
+        }
+        &_media
+        {
+            &--48rem-2rem
+            {
+                @media screen and (min-width: 48rem)
+                {
+                    gap: 2rem;
+                }
+            }
+        }
+    }
+    &-wrap
+    {
+        flex-wrap: wrap;
+    }
+    &-direction
+    {
+        &--column
+        {
+            flex-direction: column;
+        }
+        &__media
+        {
+            &--48rem-row
+            {
+                @media screen and (min-width: 48rem)
+                {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
+
+.u-grid
+{
+    &-template-columns
+    {
+        &--3
+        {
+            grid-template-columns: repeat(3, minmax(33%, 1fr));
+        }
+        &--2
+        {
+            grid-template-columns: repeat(2, minmax(49%, 1fr));
+        }
+    }
+
+    &__column_gap
+    {
+        &--0_5rem
+        {
+            column-gap: .5rem;
+        }
+
+    }
+    &__row_gap
+    {
+        &--0_75rem
+        {
+            row-gap: .75rem;
+        }
+        &--1_5rem
+        {
+            row-gap: 1.5rem;
+        }
+    }
+
+}

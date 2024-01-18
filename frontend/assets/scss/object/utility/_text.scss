@@ -1,0 +1,23 @@
+.u-text
+{
+    &-align
+    {
+        &--center
+        {
+            text-align: center;
+        }
+        &--right
+        {
+            text-align: right;
+        }
+    }
+
+    &-decoration
+    {
+        &--underline
+        {
+            text-decoration: underline;
+        }
+    }
+
+}

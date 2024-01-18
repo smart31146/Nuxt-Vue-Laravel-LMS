@@ -1,0 +1,79 @@
+.u-animation
+{
+    &__fadeIn
+    {
+        animation-duration: 500ms;
+        animation-fill-mode: both;
+		animation-name: fadeIn;
+
+    }
+
+    &__fadeOut
+    {
+        animation-duration: 500ms;
+        animation-fill-mode: both;
+		animation-name: fadeOut;
+
+    }
+
+	&__toRight
+    {
+        animation-duration: 500ms;
+        animation-fill-mode: both;
+		animation-name: toRight;
+	}
+
+	&__toLeft {
+        animation-duration: 500ms;
+        animation-fill-mode: both;
+		animation-name: toLeft;
+	}
+}
+
+@keyframes fadeIn
+{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
+
+@keyframes toRight
+{
+    0%
+    {
+        transform: translateX(-100%);
+    }
+    100%
+    {
+        transform: translateX(0);
+    }
+}
+
+@keyframes toLeft
+{
+    0%
+    {
+        transform: translateX(0);
+    }
+    100%
+    {
+        transform: translateX(-100%);
+    }
+}

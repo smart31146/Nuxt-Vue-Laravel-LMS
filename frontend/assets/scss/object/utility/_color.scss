@@ -1,0 +1,19 @@
+.u-color
+{
+    &--green
+    {
+        color: var(--green-color);
+    }
+    &--white
+    {
+        color: var(--white-color);
+    }
+    &--brown
+    {
+        color: var(--brown-color);
+    }
+    &--red
+    {
+        color: var(--red-color);
+    }
+}

@@ -1,0 +1,33 @@
+.p-anchor
+{
+    &__arrow
+    {
+        &--right
+        {
+            position: relative;
+            &::after
+            {
+                content: '';
+                margin: auto;
+                position: absolute;
+                top: 0;
+                right: 2px;
+                width: .5rem;
+                height: .5rem;
+                border-top: .0625rem solid var(--green-color);
+                border-right: .0625rem solid var(--green-color);
+                transform: rotate(45deg);
+            }
+        }
+        &--0_75rem
+        {
+            margin-right: .75rem;
+            &::after
+            {
+                top: .125rem;
+                right: -.75rem;
+                font-size: .75rem;
+            }
+        }
+    }
+}

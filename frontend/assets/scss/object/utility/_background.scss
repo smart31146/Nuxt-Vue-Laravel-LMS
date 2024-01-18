@@ -1,0 +1,19 @@
+.u-background
+{
+    &--beige
+    {
+        background: var(--beige-color);
+    }
+    &--orange
+    {
+        background-color: var(--orange-color);
+    }
+    &--white
+    {
+        background-color: var(--white-color);
+    }
+    &--gray
+    {
+        background-color: var(--white-color);
+    }
+}

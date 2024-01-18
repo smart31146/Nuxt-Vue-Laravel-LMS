@@ -1,0 +1,7 @@
+.u-box-shadow
+{
+    &--gray
+    {
+        box-shadow: var(--box-shadow-gray-color);
+    }
+}

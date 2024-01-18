@@ -1,0 +1,69 @@
+.c-circle
+{
+
+    &__shape
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+    }
+
+    &--1_5rem
+    {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: .75rem;
+    }
+    &--0_5rem
+    {
+        width: .5rem;
+        height: .5rem;
+        border-radius: .25rem;
+    }
+
+    &__new
+    {
+        padding: .125rem .25rem;
+    }
+
+}
+
+.c-text
+{
+    &__underbar
+    {
+        position: relative;
+        &::before
+        {
+            display: inline-block;
+            position: absolute;
+            content: '';
+            margin-bottom: .75rem;
+            bottom: -1.5rem;
+            left: calc(50% - 1rem);
+            width: 2rem;
+            height: .1875rem;
+            background: var(--gradient-blue-green);
+        }
+    }
+
+}
+
+.c-information
+{
+    &__list
+    {
+        &:not(:nth-last-of-type(1))
+        {
+            border-bottom: .0625rem solid var(--brown-color);
+        }
+    }
+    &__text
+    {
+        @media screen and (min-width: 48rem) {
+            display: flex;
+            gap: 1rem;
+            align-items: baseline;
+        }
+    }
+}

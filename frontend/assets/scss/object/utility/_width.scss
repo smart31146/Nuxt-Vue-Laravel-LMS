@@ -1,0 +1,145 @@
+.u-width
+{
+    &--100pct
+    {
+        width: 100%;
+    }
+    &--50pct
+    {
+        width: 50%;
+    }
+    &--1_5rem
+    {
+        width: 1.5rem;
+    }
+    &--fit-content
+    {
+        width: fit-content;
+    }
+    &--15rem
+    {
+        width: 15rem;
+    }
+    &--17rem
+    {
+        width: 17rem;
+    }
+    &--18_75rem
+    {
+        width: 18.75rem;
+    }
+    &--90pct
+    {
+        width: 90%;
+    }
+    &__min
+    {
+        &--95vw
+        {
+            &-25rem
+            {
+                width: min(95vw, 25rem);
+            }
+            &-30rem
+            {
+                width: min(95vw, 30rem);
+            }
+            &-40rem
+            {
+                width: min(95vw, 40rem);
+            }
+            &-48rem
+            {
+                width: min(95vw, 48rem);
+            }
+            &-50rem
+            {
+                width: min(95vw, 50rem);
+            }
+            &-64rem
+            {
+                width: min(95vw, 64rem);
+            }
+        }
+    }
+
+    &__clamp
+    {
+        &--8rem-40rem
+        {
+            width: clamp(8rem, 8rem + 35vw, 40rem);
+        }
+    }
+
+    &__media
+    {
+        &_min
+        {
+            &--30rem
+            {
+                &-30rem
+                {
+                    @media screen and (min-width: 30rem) {
+                        width: 30rem;
+                    }
+                }
+            }
+            &--48rem
+            {
+                &-2_5rem
+                {
+                    @media screen and (min-width: 48rem) {
+                        width: 2.5rem;
+                    }
+                }
+                &-3rem
+                {
+                    @media screen and (min-width: 48rem) {
+                        width: 3rem;
+                    }
+                }
+                &-4rem
+                {
+                    @media screen and (min-width: 48rem) {
+                        width: 4rem;
+                    }
+                }
+                &-10rem
+                {
+                    @media screen and (min-width: 48rem) {
+                        width: 10rem;
+                    }
+                }
+                &-23rem
+                {
+                    @media screen and (min-width: 48rem) {
+                        width: 23rem;
+                    }
+                }
+                &-28_125rem
+                {
+                    @media screen and (min-width: 48rem) {
+                        width: 28.125rem;
+                    }
+                }
+                &-95vw
+                {
+                    @media screen and (min-width: 48rem) {
+                        width: 95vw;
+                    }
+                }
+            }
+            &--64rem
+            {
+                &-45rem
+                {
+                    @media screen and (min-width: 64rem)
+                    {
+                        width: 45rem;
+                    }    
+                }
+            }
+        }
+    }
+
+}

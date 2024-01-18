@@ -1,0 +1,56 @@
+.u-border
+{
+
+    &__all
+    {
+        &--0_0625rem-black
+        {
+            border: .0625rem solid var(--black-color);
+        }
+        &--0_0625rem-brown
+        {
+            border: .0625rem solid var(--brown-color);
+        }
+        &--0_125rem-brown
+        {
+            border: .125rem solid var(--brown-color);
+        }
+
+    }
+
+    &-bottom
+    {
+        &--brown
+        {
+            border-bottom: .0625rem solid var(--brown-color);
+        }
+    }
+
+    &-top
+    {
+        &--gray
+        {
+            border-top: .0625rem solid var(--gray-color);
+        }
+        &--brown
+        {
+            border-top: .0625rem solid var(--brown-color);
+        }
+    }
+
+    &-radius
+    {
+        &--0_5rem
+        {
+            border-radius: .5rem;
+        }
+        &--0_75rem
+        {
+            border-radius: .75rem;
+        }
+        &--1rem
+        {
+            border-radius: 1rem;
+        }
+    }
+}

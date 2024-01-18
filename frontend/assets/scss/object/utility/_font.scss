@@ -1,0 +1,88 @@
+.u-font
+{
+    &-size
+    {
+
+        &--0_25rem
+        {
+            font-size: .25rem;
+        }
+
+        &--0_5rem
+        {
+            font-size: .5rem;
+        }
+
+        &--0_75rem
+        {
+            font-size: .75rem;
+        }
+
+        &--0_875rem
+        {
+            font-size: .875rem;
+        }
+
+        &--1rem
+        {
+            font-size: 1rem;
+        }
+
+        &--1_25rem
+        {
+            font-size: 1.25rem;
+        }
+
+        &--1_5rem
+        {
+            font-size: 1.5rem;
+        }
+
+        &--2rem
+        {
+            font-size: 2rem;
+        }
+
+        &__clamp
+        {
+            &--0_75rem
+            {
+                &-1rem
+                {
+                    font-size: clamp(.75rem, .636rem + .568vw, 1rem);
+                }
+                &-3rem
+                {
+                    font-size: clamp(.75rem, -.2727rem + 5.1136vw, 3rem);
+                }
+            }
+            &--0_875rem
+            {
+                &-1rem
+                {
+                    font-size: clamp(.875rem, .818rem + .284vw, 1rem);
+                }
+            }
+            &--1_5rem-2rem
+            {
+                font-size: clamp(1.5rem, 1.273rem + 1.136vw, 2rem);
+            }
+        }
+
+    }
+
+    &-weight
+    {
+        &--bold
+        {
+            font-weight: bold;
+        }
+        
+        &--normal
+        {
+            font-weight: normal;
+        }
+    
+    }
+
+}

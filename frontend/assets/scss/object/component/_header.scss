@@ -1,0 +1,19 @@
+.c-header
+{
+    &__area
+    {
+        &_menu
+        {
+            display: none;
+            @media screen and (min-width: 48rem) {
+                display: block;
+            }
+        }
+        &_notification
+        {
+            @media screen and (min-width: 48rem) {
+                top: 5px;
+            }
+        }
+    }
+}

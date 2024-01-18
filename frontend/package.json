@@ -1,0 +1,33 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "start": "nuxt start"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^1.0.0",
+    "nuxt": "^3.8.1",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@thelevicole/youtube-to-html5-loader": "^5.0.0",
+    "@tinymce/tinymce-vue": "^5.1.1",
+    "@vime/core": "^5.4.1",
+    "@vime/vue-next": "^5.4.1",
+    "@vueuse/core": "^10.5.0",
+    "@vueuse/nuxt": "^10.5.0",
+    "laravel-vue-pagination": "^4.1.1",
+    "sass": "^1.69.5",
+    "tinymce-i18n": "^23.11.6",
+    "typescript": "^5.2.2",
+    "vue-multiselect": "3.0.0-beta.2",
+    "vuex": "^4.1.0"
+  }
+}

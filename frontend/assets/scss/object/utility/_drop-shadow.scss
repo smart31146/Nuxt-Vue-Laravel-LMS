@@ -1,0 +1,7 @@
+.u-drop-shadow
+{
+    &--gray
+    {
+        filter: drop-shadow(var(--drop-shadow-gray-color));
+    }
+}

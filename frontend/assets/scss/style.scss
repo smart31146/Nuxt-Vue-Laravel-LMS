@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/**
+ * CSSの設計思想
+ * このスタイルシートはFLOCSS(https://github.com/hiloki/flocss)をベースにしています。
+ */
+
+/*================================================================================
+1. Foundation
+================================================================================*/
+@import "foundation/_reset";
+@import "foundation/_base";
+
+/*================================================================================
+2. Layout
+================================================================================*/
+@import "layout/_header";
+@import "layout/_footer";
+@import "layout/_main";
+
+/*================================================================================
+3. Object
+================================================================================*/
+/*
+ * #1 component
+ */
+@import "object/component/_body";
+@import "object/component/_footer";
+@import "object/component/_header";
+@import "object/component/_main";
+@import "object/component/_nav";
+
+/*
+ * #2 project
+ */
+@import "object/project/_anchor";
+@import "object/project/_button";
+@import "object/project/_footer";
+@import "object/project/_form";
+@import "object/project/_icon";
+@import "object/project/_header";
+@import "object/project/_main";
+
+/*
+ * #3 utility
+ */
+@import "object/utility/_animation";
+@import "object/utility/_border";
+@import "object/utility/_background";
+@import "object/utility/_box-shadow";
+@import "object/utility/_color";
+@import "object/utility/_cursor";
+@import "object/utility/_display";
+@import "object/utility/_drop-shadow";
+@import "object/utility/_font";
+@import "object/utility/_image";
+@import "object/utility/_margin";
+@import "object/utility/_padding";
+@import "object/utility/_paging";
+@import "object/utility/_position";
+@import "object/utility/_table";
+@import "object/utility/_text";
+@import "object/utility/_width";

@@ -1,0 +1,167 @@
+.p-link
+{
+    &__button
+    {
+        &_area
+        {
+            padding: .375rem 0;
+            flex-direction: column;
+            @media screen and (min-width: 48rem)
+            {
+                padding: .75rem .5rem;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+            }
+        }
+        &_label
+        {
+            font-size: .75rem;
+            @media screen and (min-width: 48rem)
+            {
+                font-size: 1.25rem;
+            }
+        }
+        &_icon
+        {
+            width: clamp(2.25rem, calc(2.25rem + 2vw), 4rem);
+        }
+    }
+}
+
+.p-image
+{
+    &__overlap
+    {
+        top: -1.5rem;
+        left: 0;
+        width: 3.125rem;
+        height: 3.125rem;
+        &--center
+        {
+            left: 2rem;
+            top: -1.75rem;
+        }
+        &--right
+        {
+            left: 4rem;
+        }
+        @media screen and (min-width: 48rem)
+        {
+            top: -2.25rem;
+            left: 0;
+            width: 6.25rem;
+            height: 6.25rem;
+            &--center
+            {
+                left: 3rem;
+                top: -2.5rem;
+            }
+            &--right
+            {
+                left: 6rem;
+            }
+        }
+    }
+
+}
+
+.p-grid
+{
+    &__3rows
+    {
+
+        grid-template-columns: 1fr;
+        @media screen and (min-width: 48rem)
+        {
+            grid-template-columns: repeat(3, minmax(33%, 1fr));
+        }
+
+    }
+
+    &__3_4_6_rows
+    {
+        grid-template-columns: repeat(3, minmax(33%, 1fr));
+        @media screen and (min-width: 48rem)
+        {
+            grid-template-columns: repeat(4, minmax(24%, 1fr));
+        }
+        @media screen and (min-width: 64rem)
+        {
+            grid-template-columns: repeat(6, minmax(16%, 1fr));
+        }
+
+    }
+
+}
+
+.p-swiper
+{
+    &__area
+    {
+        margin-left: 2.5vw;
+        width: 97.5vw;
+        overflow: hidden;
+        @media (min-width: 48rem)
+        {
+            width: 95vw;
+            margin-right: 2.5vw;
+        }
+        @media (min-width: 64rem)
+        {
+            width: 43rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &__impression
+    {
+        &_slide
+        {
+            width: 11rem !important;
+            padding-right: 1rem;
+            @media (min-width: 48rem)
+            {
+                width: 14rem !important;
+            }
+        }
+        &_image
+        {
+            width: 10rem;
+            @media (min-width: 48rem)
+            {
+                width: 13rem;
+            }
+        }
+    }
+
+    &__event
+    {
+        &_slide
+        {
+            width: 11rem !important;
+            padding-right: 1rem;
+            @media (min-width: 48rem)
+            {
+                width: 14rem !important;
+            }
+            @media (min-width: 64rem)
+            {
+                width: 11rem !important;
+            }
+        }
+        &_image
+        {
+            width: 10rem;
+            @media (min-width: 48rem)
+            {
+                width: 10rem;
+            }
+            @media (min-width: 64rem)
+            {
+                width: 11rem;
+            }
+        }
+    }
+}
+

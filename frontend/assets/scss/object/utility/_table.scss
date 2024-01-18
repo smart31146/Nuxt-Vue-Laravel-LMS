@@ -1,0 +1,32 @@
+.u-table
+{
+    td,
+    th
+    {
+        border-left: .0625rem solid var(--black-color);
+        border-top: .0625rem solid var(--black-color);
+        padding: .375rem .5rem;
+        &:last-of-type
+        {
+            border-right: 0.0625rem solid var(--black-color);
+        }
+    }
+    th
+    {
+        background: var(--gray-color);
+    }
+
+    tbody
+    {
+        tr
+        {
+
+            &:last-of-type {
+                td,
+                th {
+                    border-bottom: 0.0625rem solid var(--black-color);
+                }
+            }
+        }
+    }
+}
