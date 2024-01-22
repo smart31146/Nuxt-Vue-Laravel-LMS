@@ -1,1 +1,1 @@
-# H-Nextjs
+# H-Nuxtjs/Vue & Laravel
