@@ -6,43 +6,136 @@
 </Html>
 
 <section>
-<h1 class="u-width__min--95vw-64rem u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem">ユーザー詳細</h1>
-
-<dl class="u-width__min--95vw-64rem u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem">
-<dt class="u-margin-bottom--0_375rem">ユーザー名</dt>
-<dd class="u-margin-bottom--0_75rem">{{ user_name }}</dd>
-<dt class="u-margin-bottom--0_375rem">E-Mail</dt>
-<dd class="u-margin-bottom--0_75rem">{{ user_email }}</dd>
-<dt class="u-margin-bottom--0_375rem">氏名</dt>
-<dd class="u-margin-bottom--0_75rem">{{ sei }} {{ mei }}</dd>
-<dt class="u-margin-bottom--0_375rem">カナ</dt>
-<dd class="u-margin-bottom--0_75rem">{{ sei_kana }} {{ mei_kana }}</dd>
-<dt class="u-margin-bottom--0_375rem">性別</dt>
-<dd class="u-margin-bottom--0_75rem">{{ sex }}</dd>
-<dt class="u-margin-bottom--0_375rem">電話番号</dt>
-<dd class="u-margin-bottom--0_75rem">{{ tel }}</dd>
-<dt class="u-margin-bottom--0_375rem">郵便番号</dt>
-<dd class="u-margin-bottom--0_75rem">{{ zip }}</dd>
-<dt class="u-margin-bottom--0_375rem">都道府県</dt>
-<dd class="u-margin-bottom--0_75rem">{{ prefecture }}</dd>
-<dt class="u-margin-bottom--0_375rem">住所（市区町村番地）</dt>
-<dd class="u-margin-bottom--0_75rem">{{ address_01 }}</dd>
-<dt class="u-margin-bottom--0_375rem">住所（マンション名号室）</dt>
-<dd class="u-margin-bottom--0_75rem">{{ address_02 }}</dd>
-<dt class="u-margin-bottom--0_375rem">会員ランク</dt>
-<dd class="u-margin-bottom--0_75rem">{{ user_rank }}</dd>
-<dt class="u-margin-bottom--0_375rem">ユーザータイプ</dt>
-<dd class="u-margin-bottom--0_75rem">{{ user_type }}</dd>
-</dl>
-
-<p class="u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem u-width--fit-content"><NuxtLink to="/user/profile/edit" class="p-button p-button--green u-width--15rem">編集する</NuxtLink></p>
+    
+      <div class="m-auto mt-32">
+        <div class="inner">
+          <section class="category table-page">
+            <h1 class="result sec-title curriculum-title">ユーザー詳細</h1>
+            <form class="form curriculum-form">
+              <table class="form-table">
+                <tbody class="form-tbody">
+                  <tr class="input-box">
+                    <th>
+                      <label for="user-name" class="label-name"
+                        >ユーザー名</label
+                      >
+                    </th>
+                    <td>
+                        {{ user_name }}
+                    </td>
+                  </tr>
+                  <tr class="input-box">
+                    <th>
+                      <label for="user-email" class="label-name"
+                        >E-Mail</label
+                      >
+                    </th>
+                    <td>
+                        {{ user_email }}
+                    </td>
+                  </tr>
+                  <tr class="input-box">
+                    <th>
+                      <label for="user-first-name" class="label-name"
+                        >氏名</label
+                      >
+                    </th>
+                    <td>
+                        {{ sei }} {{ mei }}
+                    </td>
+                  </tr>
+                  <tr class="select-box">
+                    <th>
+                      <label for="user-kana" class="label-name">カナ</label>
+                    </th>
+                    <td>
+                        {{ sei_kana }} {{ mei_kana }}
+                    </td>
+                  </tr>
+                  <tr class="input-box">
+                    <th>
+                      <label for="user-sex" class="label-name"
+                        >性別</label
+                      >
+                    </th>
+                    <td>
+                        {{ sex }}
+                    </td>
+                  </tr>
+                  <tr class="select-box">
+                    <th>
+                      <label for="user-tel" class="label-name">電話番号</label>
+                    </th>
+                    <td>
+                        {{ tel }}
+                    </td>
+                  </tr>
+                  <tr class="input-box">
+                    <th>
+                      <label for="user-zip" class="label-name"
+                        >郵便番号</label
+                      >
+                    </th>
+                    <td>
+                        {{ zip }}
+                    </td>
+                  </tr>
+                  <tr class="select-box">
+                    <th>
+                      <label for="user-prefecture" class="label-name">都道府県</label>
+                    </th>
+                    <td>
+                        {{ prefecture }}
+                    </td>
+                  </tr>
+                  <tr class="select-box">
+                    <th>
+                      <label for="user-address01" class="label-name">住所（市区町村番地）</label>
+                    </th>
+                    <td>
+                        {{ address_01 }}
+                    </td>
+                  </tr>
+                  <tr class="input-box">
+                    <th>
+                      <label for="user-address02" class="label-name"
+                        >住所（マンション名号室）</label
+                      >
+                    </th>
+                    <td>
+                        {{ address_02 }}
+                    </td>
+                  </tr>
+                  <tr class="select-box">
+                    <th>
+                      <label for="user-rank" class="label-name">会員ランク</label>
+                    </th>
+                    <td>
+                        {{ user_rank }}
+                    </td>
+                  </tr>
+                  <tr class="select-box">
+                    <th>
+                      <label for="user-type" class="label-name">ユーザータイプ</label>
+                    </th>
+                    <td>
+                        {{ user_type}}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button class="serch-btn btn"><NuxtLink to="/user/profile/edit">編集する</NuxtLink></button>
+            </form>
+          </section>
+        </div>
+      </div>
 </section>
 </template>
 
 <script setup lang="ts">
 import type { SelectOptionItems } from '@/types/index';
 import { Prefecture, Sex, UserRank, UserType } from '@/types/const';
-
+import store from "@/store";
 const user_email = ref<string | null>();
 const user_name = ref<string | null>();
 const sei = ref<string | null>();

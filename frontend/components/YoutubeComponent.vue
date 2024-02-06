@@ -1,4 +1,5 @@
 <template>
+
 <Player
 :controls="props.is_seeker"
 :currentTime="props.startFrame"

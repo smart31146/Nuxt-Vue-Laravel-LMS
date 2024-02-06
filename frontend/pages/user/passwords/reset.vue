@@ -1,14 +1,32 @@
 <template>
-<Html>
-<Head>
-<Title>パスワードリセットの完了</Title>
-</Head>
-</Html>
+  <Html>
+    <Head>
+      <Title>パスワードリセットの完了</Title>
+    </Head>
+  </Html>
 
-<section class="u-padding-top--3rem u-padding-bottom--3rem">
-<h1 class="u-text-align--center u-margin-bottom--3rem">パスワードリセットの完了</h1>
-<p class="u-width__min--95vw-48rem u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem">入力したメールアドレスに、リセットしたパスワードを送信しました。<br>
-ログインページでリセットしたパスワードを使い、ログインしてください。</p>
-<p class="u-text-align--center"><NuxtLink class="u-text-decoration--underline" href="/user/login">ログインページに戻る</NuxtLink></p>
-</section>
+  <section class="mt-48 m-auto">
+    <div class="password">
+      <div class="password-inner">
+        <h1 class="sec-title password-title">パスワードリセットの完了</h1>
+        <p class="result inner-text">
+          ログインページでリセットしたパスワードを使い、ログインしてください。
+        </p>
+
+        <NuxtLink class="mt-4" to="/">
+          <button
+            type="button"
+            class="flex w-full justify-center rounded-md bg-indigo-600 mt-12 px-3 py-4 text-3xl font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            ログインページに戻る
+          </button>
+        </NuxtLink>
+      </div>
+    </div>
+  </section>
 </template>
+<script>
+definePageMeta({
+  layout: "user-before-login",
+});
+</script>

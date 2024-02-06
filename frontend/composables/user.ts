@@ -67,12 +67,12 @@ export const user = () =>
             method: 'POST',
             baseURL: getBaseURL(),
             body: fd,
-            onResponse({request, response})
-            {
+            // onResponse({request, response})
+            // {
 
-                useRouter().push('/service-admin/user');
+            //     useRouter().push('/service-admin/user');
 
-            }
+            // }
         });
 
         return data._value;

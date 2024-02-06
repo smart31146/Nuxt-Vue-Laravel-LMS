@@ -8,18 +8,16 @@
     <Link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" />
     <Link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" />
     <Link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
-    </Head>
+		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">  
+  </Head>
     </Html>
     
     <header class="header">
-        <NuxtLink to="/service-admin/dashboard" class="header-logo">
+        <NuxtLink to="/" class="header-logo">
             <img src="/images/logo.png" alt="LMSシステムのロゴ">
         </NuxtLink>
-        <button class="header-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </header>
     <main class="">
     <slot />

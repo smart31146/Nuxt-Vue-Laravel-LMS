@@ -68,7 +68,7 @@ export const category = () =>
             onResponse({request, response})
             {
 
-                useRouter().push('/service-admin/categories');
+                // useRouter().push('/service-admin/categories');
 
             }
         });

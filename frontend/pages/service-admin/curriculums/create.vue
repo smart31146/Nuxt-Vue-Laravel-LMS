@@ -150,6 +150,7 @@
                       <TinyMCEComponent
                         ref="curriculum_text"
                         :data="curriculumTextData"
+                        :init="{height: 500}"
                       />
                     </div>
                   </td>

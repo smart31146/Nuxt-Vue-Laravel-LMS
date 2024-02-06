@@ -26,6 +26,7 @@ class CurriculumsController extends Controller
     {
 
         $query = Curriculum::query();
+        $categories = Category::query();
         if ($request->has('authority_ranks'))
         {
 
@@ -198,9 +199,9 @@ class CurriculumsController extends Controller
             $query->orderBy('curriculum_id', 'ASC');
 
         }
-
-        $curriculums = $query->paginate(20);
-
+        
+        $curriculums = $query->with('categories')->paginate(20);
+        
         return $curriculums;
 
     }

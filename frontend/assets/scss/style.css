@@ -9,14 +9,20 @@
   --lightGray--color: #EFF4F9;
   --gray--color: #adadad;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
   font-size: 62.5%;
 }
 body {
   overflow-x: hidden;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: sans-serif;
   background-color: var(--lightGray--color);
   color: var(--darkgray--color);
+  letter-spacing: 1px;
 }
 .border {
     text-decoration: underline;
@@ -26,7 +32,7 @@ body {
   text-wrap: wrap;
 }
 .sec-title {
-  margin-bottom: 32px;
+  margin: 0 0 20px 32px;
   font-size: 3.2rem;
   line-height: 1.2;
   text-align: left;
@@ -39,7 +45,7 @@ body {
   font-size: 2.2rem;
 }
 .content {
-  margin: 154px 32px 0 248px;
+  margin: 154px 32px 0 248px
 }
 .accont-content {
   margin: 154px 32px 0 290px;
@@ -61,11 +67,11 @@ body {
 }
 .nav-area {
   position: fixed;
-  margin-top: 88px;
+  margin-top: 83px;
   top: 0;
   left: 0;
   background-color: white;
-  height: calc(100vh -  88px);
+  height: calc(100vh - 88px);
   z-index: 98;
 }
 .gnav-item {
@@ -182,6 +188,7 @@ body {
   color: var(--blueGray--color);
 }
 .form-tbody td {
+  /* height: 59px; */
   padding: 12px;
   border-bottom: 1px solid #ccc;
 } 
@@ -262,6 +269,7 @@ input#unknown {
   display: block;
   margin-bottom: 8px;
 }
+
 .file-block th {
   font-size: 1.6rem;
 }
@@ -485,10 +493,71 @@ button .icon {
   font-size: 1.3rem;
   text-align: center;
 }
-@media screen and (min-width: 1100px) {
-  .copyRight {
-    margin-left: 215px;
+
+  .table-page {
+    margin: 0 40px !important;
   }
+
+.curriculum-content-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+.curriculum-title-list {
+  width: 50%;
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.curriculum-search {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.curri-search-btn {
+  background-color: #333;
+  border-radius: 10px;
+  margin-left: 5px;
+  padding: 7px;
+  border-radius: 3px !important;
+}
+
+.category-tile {
+  text-align: center;
+  margin-top: 4rem;
+  margin-left: 6rem;
+  font-size: 3.2rem;
+}
+.category-list {
+  margin: 3rem 0 0 4rem;
+  list-style: disc;
+}
+.user-category {
+  text-wrap: wrap;
+  font-size: 1.5rem;
+  margin: 1rem 0 0 8rem;
+}
+.curriculum-card {
+  display: flex;
+  justify-content: space-between;
+}
+.curriculum-card-item {
+  width: 20%;
+  margin-bottom: 1.5rem;
+}
+.curriculum-img {
+  aspect-ratio: 16/8;
+  text-align: center;
+  object-fit: cover;
+}
+.curriculum-card-item dt {
+  margin-top: 1rem;
+  text-align: left;
+}
+.curriculum-card-item dt a{
+  font-size: 1.2rem;
 }
 @media screen and (max-width: 1024px) {
   .sec-title {
@@ -499,6 +568,7 @@ button .icon {
     align-items: center;
     justify-content: space-between;
   }
+ 
   .header-menu {
     position: relative;
     display: block;
@@ -565,14 +635,13 @@ button .icon {
     -o-transform: translateX(0);
   }
   .content {
-    margin: 120px auto 0;
+    width: 100%;
+    margin: 154px auto 0;
   }
   .dashboard {
     max-width: 100%;
   } 
-  .inner {
-    padding: 0 16px;
-  }
+ 
   .form {
     margin-bottom: 32px;
     padding: 24px 16px ;
@@ -611,6 +680,7 @@ button .icon {
     width: auto;
   }
 }
+
 @media screen and (max-width: 768px) {
   .sec-title {
     font-size: 2.2rem;
@@ -634,6 +704,13 @@ button .icon {
   }
 }
 @media screen and (max-width: 480px) {
+  .player.video {
+    min-width: 52vw !important;
+    aspect-ratio: 16/9 !important;
+    height: auto;
+    overflow: hidden;
+    background-color: var(--vm-player-bg, #000);
+  }
   .curriculum-img td,
   .file-area, 
   .video-link{

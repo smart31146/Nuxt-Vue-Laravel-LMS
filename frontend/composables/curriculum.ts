@@ -61,21 +61,21 @@ export const curriculum = () =>
                 if (mode === 'service-admin')
                 {
 
-                    useRouter().push('/service-admin/curriculums');
+                    // useRouter().push('/service-admin/curriculums');
 
                 }
 
                 if (mode === 'user')
                 {
 
-                    useRouter().push('/user/dashboard');
+                    // useRouter().push('/user/dashboard');
 
                 }
 
                 if (mode === 'open')
                 {
 
-                    useRouter().push('/');
+                    // useRouter().push('/');
 
                 }
 

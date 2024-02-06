@@ -11,4 +11,9 @@ class Curriculum extends Model
 
     protected $primaryKey = 'curriculum_id';
 
+    public function categories()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
 }

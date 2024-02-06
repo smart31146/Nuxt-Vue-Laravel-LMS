@@ -145,7 +145,7 @@ export const useAuth = () =>
         });
         userInfo.value = null;
         userToken.value = null;
-        useRouter().replace('/user/login');
+        useRouter().replace('/');
 
     }
 

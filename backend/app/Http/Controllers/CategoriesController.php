@@ -80,7 +80,7 @@ class CategoriesController extends Controller
                                     WHEN parent_id is null then category_id
                                     ELSE parent_id
                                 END AS group_id
-                            ")->
+                            ")->with('curriculums')->
                             orderBy('group_id', 'ASC')->
                             orderBy('category_id', 'ASC')->
                             paginate(20);

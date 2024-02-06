@@ -2,9 +2,9 @@
 export default defineNuxtConfig({
     devtools: { enabled: true },
     css: [
-        '@/assets/scss/style.scss',
-        '@/assets/scss/style.css',
+        '/assets/scss/style.css',
     ],
+    
     ssr: false,
     runtimeConfig:
     {
@@ -14,11 +14,28 @@ export default defineNuxtConfig({
             TINYMCE_API_KEY: process.env.TINYMCE_API_KEY,
         }
     },
-    modules: ['@vueuse/nuxt'],
+    modules: '@nuxtjs/tailwindcss',
     build: {
+        postcss: {
+            plugins: {
+              tailwindcss: {},
+              autoprefixer: {},
+              'postcss-import': true,
+            },
+          },
         rollupOptions: {
           external: ['vuex'],
         },
       },
+    buildModules: [
+        '@nuxt/typescript-build',
+        '@nuxtjs/tailwindcss'
+    ],
+    tailwindcss: {
+        exposeConfig: true,
+        jit: true,
+        viewer: false
+      }
+
 })
 

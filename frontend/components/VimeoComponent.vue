@@ -1,15 +1,16 @@
 <template>
 <Player
+
 theme="dark"
 :currentTime="props.startFrame"
 @vmCurrentTimeChange="timeChange"
 @vmPlaybackEnded="ended"
 @vmDurationChange="durationChange"
 >
-<Vimeo
+<Vimeo style="min-width:52vw;"
 :videoId="props.url"
 />
-<DefaultUi
+<DefaultUi style="min-width:52vw;"
 noSettings="true"
 :noControls="!props.is_seeker"
 />

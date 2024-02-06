@@ -188,7 +188,7 @@
                     <td>{{ ReleaseType.get(item.release_type.toString()) }}</td>
                     <td>{{ CurriculumStatus.get(item.status) }}</td>
                     <td>
-                      <ul class="u-display--flex u-flex__gap--0_5rem">
+                      <ul class="flex gap-0.5">
                         <li>
                           <NuxtLink
                             :to="`/service-admin/curriculums/edit/${item.curriculum_slug}`"

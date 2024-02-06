@@ -91,6 +91,7 @@ export interface Curriculum
     curriculum_name: string;
     curriculum_image: string | null;
     category_id: number;
+    category_name: string;
     curriculum_type: string;
     authority_ranks: string;
     curriculum_text: string | null;
@@ -260,6 +261,7 @@ export interface CardCurriculum
     mode: string;
     curriculum_slug: string;
     curriculum_name: string;
+    category_name: string;
     curriculum_image: string | null | undefined;
     image_path: string;
     no_image_path: string;

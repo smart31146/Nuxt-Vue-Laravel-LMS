@@ -99,7 +99,7 @@
 <script setup lang="ts">
 import type { SelectOptionItems, Category } from "@/types/index";
 import { CategoryLevels } from "@/types/const";
-import store from '../../../../store';
+import store from "@/store";
 const category_data = ref<Category | null>();
 const category_slug = ref("");
 const category_name_admin = ref("");

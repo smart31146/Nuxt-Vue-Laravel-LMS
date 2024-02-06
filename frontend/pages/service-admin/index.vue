@@ -53,7 +53,7 @@ const login = async () => {
     admin_email: admin_email.value,
     password: password.value,
   };
-
+  console.log("log",loginInfo)
   error_message.value.innerHTML = await adminLogin(loginInfo);
   if (error_message.value.innerHTML) {
     window.scroll({ top: 0, behavior: "smooth" });

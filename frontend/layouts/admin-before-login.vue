@@ -1,6 +1,7 @@
 <template>
     <Html>
       <Head>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <Link rel="preconnect" href="//cdnjs.cloudflare.com" />
         <Link rel="preconnect" href="//fonts.googleapis.com" />
         <Link
@@ -28,6 +29,7 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
         />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
       </Head>
     </Html>
   
