@@ -1,6 +1,9 @@
-/** @type {import('tailwindcss').Config} */
-const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
+// /** @type {import('tailwindcss').Config} */
+// const defaultTheme = require("tailwindcss/defaultTheme");
+// const colors = require("tailwindcss/colors");
+const colors = require('tailwindcss/colors')
+const animate = require('tailwindcss-animated')
+const plugin = require('tailwindcss/plugin')
 module.exports = {
   content: [
     './components/**/*.{js,vue,ts}',
@@ -15,24 +18,39 @@ module.exports = {
     './node_modules/tw-elements/dist/js/**/*.js',
     './node_modules/flowbite/**/*.{js,ts}'
   ],
-  darkMode: 'class',
-  content: [],
+  presets: [],
+  media: false,
   theme: {
-    extend: {},
-    backgroundColor: theme => ({
-      ...theme('colors'),
-      'primary': '#2e0249',
-      'secondary': '#ffed4a',
-      'danger': '#e3342f',
-     })
+    extend: {
+      colors: {
+        weekGray: '#F4E7E7',
+        customPink: '#7C1956',
+        inputBackground: '#EAE7E7',
+        lineColor: "#908888",
+        titleColor: "#3C3939",
+        customBlue: "#3631BE",
+        customBlue2: "#A7C7EB",
+        inputBorder: "#707070",
+        adminNormalColor: "#08690F",
+        adminNormalColor2: "#93E899",
+        textBackgroundColor: "#625D60"
+      },
+    },
+ 
    }
   ,
   plugins: [
-    require('tw-elements/dist/plugin.cjs'), 
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
-    require('flowbite/plugin')
-  ],
+    plugin(function({ addUtilities }) {
+      const newUtilities = {
+        '.aspect-16-12': {
+          'aspect-ratio': '16/12',
+        },
+        
+      }
+
+      addUtilities(newUtilities)
+    }),
+    animate],
 
 }
 

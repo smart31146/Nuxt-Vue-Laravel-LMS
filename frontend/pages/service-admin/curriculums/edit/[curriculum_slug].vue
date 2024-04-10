@@ -99,7 +99,7 @@
                 </tr>
                 <tr class="select-box">
                   <th>
-                    <label for="category-type" class="label-name"
+                    <label class="label-name"
                       >カテゴリ名<span>*</span></label
                     >
                   </th>
@@ -315,7 +315,7 @@
                     </div>
                   </td>
                 </tr>
-                <tr class="input-box radio radio-option">
+                <tr class="input-box checkbox checkbox-option">
                   <th class="label-name-th">閲覧権限ランク<span>*</span></th>
                   <td class="rank">
                     <CheckboxComponent
@@ -648,10 +648,9 @@ const update = async () => {
     fd.append("pdf_file_change5", "1");
   }
 
-  error_message.value.innerHTML = await storeCurriculum("update", fd);
-  if (error_message.value.innerHTML) {
-    window.scroll({ top: 0, behavior: "smooth" });
-  }
+
+  await storeCurriculum("update", fd);
+ 
 
   if (media_audio.value !== null) {
     media_audio.value.stopInterval("audio_file");

@@ -26,7 +26,7 @@
               <tbody class="form-tbody">
                 <tr class="input-box">
                   <th>
-                    <label for="user-name" class="label-name">ユーザー名</label>
+                    <label class="label-name">ユーザー名</label>
                   </th>
                   <td>
                     {{ user_name }}
@@ -34,7 +34,7 @@
                 </tr>
                 <tr class="input-box">
                   <th>
-                    <label for="email" class="label-name">E-mail</label>
+                    <label class="label-name">E-mail</label>
                   </th>
                   <td>
                     {{ user_email }}
@@ -56,7 +56,7 @@
                 </tr>
                 <tr class="input-box">
                   <th>
-                    <label for="tel" class="label-name">電話番号</label>
+                    <label class="label-name">電話番号</label>
                   </th>
                   <td>
                     {{ tel }}
@@ -64,7 +64,7 @@
                 </tr>
                 <tr class="input-box">
                   <th>
-                    <label for="yuubin-bango" class="label-name"
+                    <label class="label-name"
                       >郵便番号</label
                     >
                   </th>
@@ -74,7 +74,7 @@
                 </tr>
                 <tr class="select-box">
                   <th>
-                    <label for="prefectures" class="label-name">都道府県</label>
+                    <label class="label-name">都道府県</label>
                   </th>
                   <td>
                     {{ prefecture }}
@@ -95,7 +95,7 @@
                 </tr>
                 <tr v-if="address_02 !== undefined" class="input-box">
                   <th>
-                    <label for="address-apartment" class="label-name"
+                    <label class="label-name"
                       >住所（マンション名号室）</label
                     >
                   </th>
@@ -105,7 +105,7 @@
                 </tr>
                 <tr class="select-box">
                   <th>
-                    <label for="rank" class="label-name">会員ランク</label>
+                    <label class="label-name">会員ランク</label>
                   </th>
                   <td>
                     {{ user_rank }}
@@ -113,7 +113,7 @@
                 </tr>
                 <tr class="select-box">
                   <th>
-                    <label for="type" class="label-name">ユーザータイプ</label>
+                    <label class="label-name">ユーザータイプ</label>
                   </th>
                   <td class="last">
                     {{ user_type }}

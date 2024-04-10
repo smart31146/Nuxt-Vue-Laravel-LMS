@@ -18,7 +18,15 @@
 			<Disclosure as="nav" class="w-full top-0 right-0 fixed z-30 bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg" v-slot="{ open }">
 				<div class="mx-auto px-2 py-8 sm:px-6 lg:px-8">
 				  <div class="relative flex h-16 items-center justify-between">
-					
+					<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+					  <!-- Mobile menu button-->
+					 /* <DisclosureButton class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+						<span class="absolute -inset-0.5" />
+						<span class="sr-only">Open main menu</span>
+						<Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
+						<XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
+					  </DisclosureButton>*/
+					</div>
 					<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 					  <div class="flex flex-shrink-0 items-center">
 						<NuxtLink href="/"> <img class="h-8 w-auto" src="/images/logo-white.png" alt="LMSシステムのロゴ" /> </NuxtLink>

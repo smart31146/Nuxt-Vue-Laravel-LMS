@@ -16,7 +16,7 @@
 		</Html>
 
 		<header>
-			<Disclosure as="nav" class="w-full top-0 right-0 fixed z-20 bg-gray-800" v-slot="{ open }">
+			<Disclosure as="nav" class="w-full top-0 right-0 fixed z-30 bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg" v-slot="{ open }">
 				<div class="mx-auto px-2 py-8 sm:px-6 lg:px-8">
 				  <div class="relative flex h-16 items-center justify-between">
 					<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -27,23 +27,20 @@
 						<Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
 						<XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
 					  </DisclosureButton>
+					
 					</div>
 					<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 					  <div class="flex flex-shrink-0 items-center">
-						<img class="h-8 w-auto" src="/images/logo-white.png" alt="LMSシステムのロゴ" /> 
+						<NuxtLink href="/user/dashboard" ><img class="h-8 w-auto" src="/images/logo-white.png" alt="LMSシステムのロゴ" /> </NuxtLink>
 					  </div>
+					  
 					  <div class="hidden sm:ml-12 sm:block">
 						<div class="flex space-x-4">
-						  <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-700 text-white' : ' text-white hover:bg-gray-700 hover:text-white', 'rounded-md px-3 py-2 text-3xl font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+						  <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-700 text-white' : ' text-white hover:bg-gray-700 hover:text-white', 'rounded-md px-3 py-2 text-3xl font-medium']" :aria-current="item.current ? 'page' : undefined" @click="setCurrent(item.name)">{{ item.name }}</a>
 						</div>
 					  </div>
 					</div>
 					<div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-					  <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-						<span class="absolute -inset-1.5" />
-						<span class="sr-only">View notifications</span>
-						<BellIcon class="h-6 w-6" aria-hidden="true" />
-					  </button>
 			
 					  <!-- Profile dropdown -->
 					  <Menu as="div" class="relative ml-3">
@@ -91,19 +88,16 @@
 
 <script setup lang="ts">
 	import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-      import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-
+    import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+	const route = useRoute()
       const navigation = [
-      { name: 'ダッシュボード', href: '/user/dashboard', current: true },
-      { name: '受講履歴', href: '/user/curriculums', current: false },
-      { name: '終了証', href: '/user/certifications/', current: false },
-      { name: 'プロフィール', href: '/user/profile', current: false },
+      { name: 'ダッシュボード', href: '/user/dashboard', current: route.name=='user-dashboard' ? true : false },
+      { name: '受講履歴', href: '/user/curriculums', current: route.name=='user-curriculums' ? true : false },
+      { name: '終了証', href: '/user/certifications/', current: route.name=='user-certifications' ? true : false },
+      { name: 'プロフィール', href: '/user/profile', current: route.name=='user-profile' ? true : false },
       ]
-const isMenuOpen = ref(false);
 
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
+const isMenuOpen = ref(false);
 
 import store from '../store';
 import { ref } from 'vue';
@@ -113,7 +107,6 @@ const stateIsMenuOpen = ref(store.state.stateIsMenuOpen);
 const setStateIsMenuOpen = () => {
 	isMenuOpen.value = !isMenuOpen.value;
   store.state.stateIsMenuOpen = isMenuOpen.value;
-  console.log("store",store.state.stateIsMenuOpen);
   
 };
 const { userLogout } = useAuth();

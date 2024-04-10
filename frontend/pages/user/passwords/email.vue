@@ -7,10 +7,10 @@
 
 <section class="u-padding-top--3rem u-padding-bottom--3rem">
     
-  <div class="flex m-auto mt-48 mb-12 w-1/3 bg-white min-h-full flex-1 flex-col justify-center py-24 lg:px-8">
+  <div class="flex m-auto mt-48 mb-12 w-4/5 md:w-1/3 bg-white min-h-full flex-1 flex-col justify-center py-24 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
       <img class="mx-auto h-24 w-auto" src="/images/logo.png" alt="Your Company" />
-      <h2 class="mt-10 text-center text-5xl font-bold leading-9 tracking-tight text-gray-900">現在登録しているE-Mailを入力</h2>
+      <h2 class="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-gray-900">現在登録しているE-Mailを入力</h2>
     </div>
     
     <div class="mt-14 w-3/4 m-auto text-3xl">
@@ -57,6 +57,7 @@ const submit = async () =>
 }
 
 definePageMeta({
-    layout: 'user-before-login',
+    layout: 'user-after-login',
+    middleware: 'user',
 });
 </script>

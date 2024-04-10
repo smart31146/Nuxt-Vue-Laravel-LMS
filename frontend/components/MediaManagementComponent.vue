@@ -9,7 +9,7 @@ v-if="media_kind === 'audio_file'"
 :key="mediaUpdate"
 />
 <YoutubeComponent
-class="player video"
+class="custom-player player video"
 ref="youtube"
 :url="props.url"
 :startFrame="props.startFrame"
@@ -18,7 +18,7 @@ v-if="media_kind === 'youtube'"
 @sendProgress="sendProgress"
 :key="mediaUpdate"
 />
-<VimeoComponent class="player video"
+<VimeoComponent class="custom-player player video"
 ref="vimeo"
 :url="props.url"
 :startFrame="props.startFrame"

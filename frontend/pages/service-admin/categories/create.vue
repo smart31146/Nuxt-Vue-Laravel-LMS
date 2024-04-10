@@ -9,9 +9,29 @@
     <div class="nav-area" :class="{ 'is_open': globlaStore.state.stateIsMenuOpen }">
       <nav class="gnav">
         <ul class="gnav-list">
+           <li class="gnav-item">
+            <NuxtLink to="/service-admin/categories/" class="gnav-link"
+              >カテゴリ管理</NuxtLink
+            >
+          </li>
           <li class="gnav-item">
-            <NuxtLink to="/service-admin/categories" class="gnav-link"
-              >カテゴリ管理に戻る</NuxtLink
+            <NuxtLink to="/service-admin/curriculums/" class="gnav-link"
+              >カリキュラム管理</NuxtLink
+            >
+          </li>
+          <li class="gnav-item">
+            <NuxtLink to="/service-admin/user/" class="gnav-link"
+              >ユーザー管理</NuxtLink
+            >
+          </li>
+          <li class="gnav-item">
+            <NuxtLink to="/service-admin/account/" class="gnav-link"
+              >管理者アカウント管理</NuxtLink
+            >
+          </li>
+          <li class="gnav-item">
+            <span @click.prevent="logout" class="gnav-link logout"
+              >ログアウト</span
             >
           </li>
         </ul>
@@ -59,7 +79,7 @@
                 </tr>
                 <tr class="select-box">
                   <th>
-                    <label for="category-type" class="label-name"
+                    <label class="label-name"
                       >階層<span>*</span></label
                     >
                   </th>
@@ -75,7 +95,7 @@
                 </tr>
                 <tr class="select-box" v-if="is_child_selected">
                   <th>
-                    <label for="category-type" class="label-name"
+                    <label class="label-name"
                       >親カテゴリ<span>*</span></label
                     >
                   </th>

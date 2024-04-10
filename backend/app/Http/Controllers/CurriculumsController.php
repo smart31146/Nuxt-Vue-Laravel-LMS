@@ -970,7 +970,6 @@ class CurriculumsController extends Controller
                         certificates.created_at
                     ')->
                     join('users', 'users.user_id', '=', 'certificates.user_id')->
-                    where('certificates.status', 'R')->
                     where('users.status', 'A')->
                     paginate(20);
 

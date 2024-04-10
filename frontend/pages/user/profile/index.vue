@@ -16,7 +16,7 @@
                 <tbody class="form-tbody">
                   <tr class="input-box">
                     <th>
-                      <label for="user-name" class="label-name"
+                      <label class="label-name"
                         >ユーザー名</label
                       >
                     </th>
@@ -26,7 +26,7 @@
                   </tr>
                   <tr class="input-box">
                     <th>
-                      <label for="user-email" class="label-name"
+                      <label class="label-name"
                         >E-Mail</label
                       >
                     </th>
@@ -36,7 +36,7 @@
                   </tr>
                   <tr class="input-box">
                     <th>
-                      <label for="user-first-name" class="label-name"
+                      <label class="label-name"
                         >氏名</label
                       >
                     </th>
@@ -46,7 +46,7 @@
                   </tr>
                   <tr class="select-box">
                     <th>
-                      <label for="user-kana" class="label-name">カナ</label>
+                      <label class="label-name">カナ</label>
                     </th>
                     <td>
                         {{ sei_kana }} {{ mei_kana }}
@@ -54,7 +54,7 @@
                   </tr>
                   <tr class="input-box">
                     <th>
-                      <label for="user-sex" class="label-name"
+                      <label class="label-name"
                         >性別</label
                       >
                     </th>
@@ -64,7 +64,7 @@
                   </tr>
                   <tr class="select-box">
                     <th>
-                      <label for="user-tel" class="label-name">電話番号</label>
+                      <label class="label-name">電話番号</label>
                     </th>
                     <td>
                         {{ tel }}
@@ -72,7 +72,7 @@
                   </tr>
                   <tr class="input-box">
                     <th>
-                      <label for="user-zip" class="label-name"
+                      <label class="label-name"
                         >郵便番号</label
                       >
                     </th>
@@ -82,7 +82,7 @@
                   </tr>
                   <tr class="select-box">
                     <th>
-                      <label for="user-prefecture" class="label-name">都道府県</label>
+                      <label class="label-name">都道府県</label>
                     </th>
                     <td>
                         {{ prefecture }}
@@ -90,7 +90,7 @@
                   </tr>
                   <tr class="select-box">
                     <th>
-                      <label for="user-address01" class="label-name">住所（市区町村番地）</label>
+                      <label class="label-name">住所（市区町村番地）</label>
                     </th>
                     <td>
                         {{ address_01 }}
@@ -98,7 +98,7 @@
                   </tr>
                   <tr class="input-box">
                     <th>
-                      <label for="user-address02" class="label-name"
+                      <label class="label-name"
                         >住所（マンション名号室）</label
                       >
                     </th>
@@ -108,7 +108,7 @@
                   </tr>
                   <tr class="select-box">
                     <th>
-                      <label for="user-rank" class="label-name">会員ランク</label>
+                      <label class="label-name">会員ランク</label>
                     </th>
                     <td>
                         {{ user_rank }}
@@ -116,7 +116,7 @@
                   </tr>
                   <tr class="select-box">
                     <th>
-                      <label for="user-type" class="label-name">ユーザータイプ</label>
+                      <label class="label-name">ユーザータイプ</label>
                     </th>
                     <td>
                         {{ user_type}}

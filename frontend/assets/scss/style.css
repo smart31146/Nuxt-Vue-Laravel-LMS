@@ -24,10 +24,13 @@ body {
   color: var(--darkgray--color);
   letter-spacing: 1px;
 }
-.border {
+/* .border {
     text-decoration: underline;
-}
+} */
 /* 見出し */
+.bg-customPink {
+  background-color: #EFF4F9;
+}
 .text-wrap {
   text-wrap: wrap;
 }
@@ -63,6 +66,9 @@ body {
   width: 150px;
 }
 .header-menu {
+  display: none;
+}
+.header-menu-user {
   display: none;
 }
 .nav-area {
@@ -568,7 +574,6 @@ button .icon {
     align-items: center;
     justify-content: space-between;
   }
- 
   .header-menu {
     position: relative;
     display: block;
@@ -704,12 +709,14 @@ button .icon {
   }
 }
 @media screen and (max-width: 480px) {
-  .player.video {
-    min-width: 52vw !important;
-    aspect-ratio: 16/9 !important;
+  .custom-player {
+    min-width: 100% !important;
     height: auto;
     overflow: hidden;
     background-color: var(--vm-player-bg, #000);
+  }
+  .table-page {
+    margin: 0 !important;
   }
   .curriculum-img td,
   .file-area, 

@@ -40,9 +40,11 @@
     <div class="content">
       <div class="inner">
         <section class="dashboard table-page">
+        
           <h1 class="sec-title dashboard-title">
             修了証の申請があったユーザー
           </h1>
+          
           <div class="table-area">
             <div class="table-inner">
               <table class="curriculum-table table">
@@ -82,17 +84,20 @@
         </section>
       </div>
     </div>
+    
     <PaginationComponent
       :data="user_object"
       :limit="3"
       :keep-length="false"
       @pagination-change-page="pagingUserData"
     />
+
   </section>
 </template>
 
 <script setup lang="ts">
-import type {
+
+  import type {
   PaginatedResponse,
   DataType,
   RequestCertificateData,
