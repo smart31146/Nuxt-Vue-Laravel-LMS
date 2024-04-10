@@ -10,37 +10,9 @@
        
           <section class="category table-page">
             <form class="form curriculum-form">
-              <table class="form-table">
-                <tbody class="form-tbody">
-                    <tr class="input-box curriculum-img">
-                        <th>カリキュラム画像</th>
-                        <td>
-                            <img :src="curriculum_image" >
-                        </td>
-                    </tr>
-                  <tr class="input-box">
-                    <th>
-                      <label for="user-curriculum-name" class="label-name"
-                        >カリキュラム名<span>*</span></label
-                      >
-                    </th>
-                    <td>
-                        {{ curriculum_name }}
-                    </td>
-                  </tr>
-                  <tr class="input-box" v-if="curriculum_text !== undefined">
-                    <th>
-                      <label for="curriculum-name" class="label-name"
-                        >カリキュラム内容</label
-                      >
-                    </th>
-                    <td>
-                      <div class="text-wrap" v-html="curriculum_text" v-if="curriculum_text !== undefined"></div>
-                    </td>
-                  </tr>
-                  <tr class="input-box curriculum-video" v-if="movie_url !== undefined">
-                    <th class="label-name-th">カリキュラム動画</th>
-                    <td>
+                <div className="p-4 text-2xl md:text-3xl text-center text-white bg-blue-600">{{ curriculum_name }}</div>
+                 <div class="vieo-td w-full md:w-10/12 m-auto mt-8 curriculum-video" v-if="movie_url !== undefined">
+                    
                         <MediaManagementComponent
                         media_kind="youtube"
                         :url="movie_url"
@@ -65,14 +37,10 @@
                         v-if="movie_url !== undefined && is_vimeo"
                         :key="mediaUpdate"
                         />
-                    </td>
-                  </tr>
-                  <tr class="input-box curriculum-video" v-if="curriculum_type === '2'">
-                
-                    <th>
-                      音声ファイル
-                    </th>
-                    <td class="vieo-td">
+                    
+                  </div>
+                  <div class="flex justify-center vieo-td text-center w-full m-auto mt-8 curriculum-video" v-if="curriculum_type === '2'">
+                    
                         <MediaManagementComponent
                         media_kind="audio_file"
                         :url="audio_file"
@@ -85,11 +53,17 @@
                         v-if="audio_file !== undefined"
                         :key="mediaUpdate"
                         />
-                    </td>
-                  </tr>
-                  <tr class="input-box file-block" v-if="pdf_file">
-                    <th>PDFファイル</th>
-                    <td class="file-area">
+                    
+                  </div>
+                <div className="mt-8 mb-4 grid grid-cols-1 lg:grid-cols-2 border border-b border-gray-400  ">
+                    <div class="bg-customPink text-3xl text-center p-4 ">カテゴリ名</div>
+                    <div className="text-3xl text-center p-4 lg:border-l border-gray-400">
+                        {{ category_name }} / {{ is_required }}
+                    </div>
+                </div>
+                <div className="mb-4 grid grid-cols-1 lg:grid-cols-2 border border-b border-gray-400  ">
+                    <div class="bg-customPink text-3xl text-center p-4 ">PDFファイル</div>
+                    <div className="text-3xl text-center p-4 lg:border-l border-gray-400">
                         <ul>
                             <li class="u-margin-bottom--0_75rem" v-if="pdf_file1 !== undefined">
                             <NuxtLink :to="pdf_file1" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
@@ -107,19 +81,14 @@
                             <NuxtLink :to="pdf_file5" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
                             </li>
                         </ul>
-                            
-                    </td>
-                  </tr>
+                    </div>
+                </div>
+                <div className="mb-4 grid grid-cols-1 lg:grid-cols-2 border border-b border-gray-400  ">
+                    <div class="bg-customPink text-3xl text-center p-4 ">カリキュラム内容</div>
+                    <div className="text-3xl text-center p-4 lg:border-l border-gray-400" v-html="curriculum_text"></div>
+                </div>
                  
-                  <tr class="input-box radio radio-option">
-                    <th class="label-name-th">カテゴリ名</th>
-                    <td>
-                        {{ category_name }} / {{ is_required }}
-                    </td>
-                  </tr>                
-                 
-                </tbody>
-              </table>
+             
              
               <button class="m-auto w-full md:w-1/4 text-2xl py-4 mb-4 flex justify-center text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><NuxtLink to="/user/dashboard" class="u-text-decoration--underline">カリキュラム一覧に戻る</NuxtLink></button>
               <button class="m-auto w-full md:w-1/4 text-2xl py-4 mb-4 flex justify-center text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><NuxtLink to="/user/curriculums" class="u-text-decoration--underline">受講履歴に戻る</NuxtLink></button>

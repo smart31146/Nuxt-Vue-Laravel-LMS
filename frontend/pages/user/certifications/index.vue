@@ -6,16 +6,17 @@
 </Html>
 
 <section>
-<p class="u-margin-left--auto u-margin-right--auto u-margin-bottom--3rem u-width--fit-content" v-if="mode === 'cannot'">現在、修了証の申請はできません。</p>
 
-<p class="u-margin-left--auto u-margin-right--auto u-margin-bottom--0_75rem u-width--fit-content" v-if="mode === 'request'">修了証を申請する場合は、申請ボタンを押してください。</p>
+<p class="mt-64 ml-8 mb-8 text-black text-5xl" v-if="mode === 'cannot'">現在、修了証の申請はできません。</p>
 
-<p class="u-margin-left--auto u-margin-right--auto u-margin-bottom--3rem u-width--fit-content" v-if="mode === 'request'"><span class="p-button p-button__width--15rem p-button--green" @click="submit">修了証を申請する</span></p>
+<p class="mt-64 ml-8 mb-8 text-black text-5xl" v-if="mode === 'request'">修了証を申請する場合は、申請ボタンを押してください。</p>
 
-<p class="u-margin-left--auto u-margin-right--auto u-margin-bottom--3rem u-width--fit-content" v-if="mode === 'waiting'">現在、運営者で修了証の発行待ちです。</p>
+<p class="mt-64 ml-8 mb-8 text-black text-5xl" v-if="mode === 'request'"><span class="p-button p-button__width--15rem p-button--green" @click="submit">修了証を申請する</span></p>
 
-<p class="u-margin-left--auto u-margin-right--auto u-margin-bottom--0_75rem u-width--fit-content" v-if="mode === 'certified'">運営者から修了証が発行されました。</p>
-<p class="u-margin-left--auto u-margin-right--auto u-margin-bottom--3rem u-width--fit-content" v-if="mode === 'certified'">発行日: {{ certified_date }}</p>
+<p class="mt-64 ml-8 mb-8 text-black text-5xl" v-if="mode === 'waiting'">現在、運営者で修了証の発行待ちです。</p>
+
+<p class="mt-64 ml-8 mb-8 text-black text-5xl" v-if="mode === 'certified'">運営者から修了証が発行されました。</p>
+<p class="mt-64 ml-8 mb-8 text-black text-5xl" v-if="mode === 'certified'">発行日: {{ certified_date }}</p>
 
 </section>
 </template>
@@ -89,6 +90,7 @@ const init = async () =>
         }
 
     }
+     
 
 }
 

@@ -31,7 +31,7 @@
                     >
                   </th>
                   <td>
-                    <input type="search" class="input-block" v-model="curriculum_name" />
+                    <input type="search" class="input-block" id="curriculum_name" v-model="curriculum_name" />
                   </td>
                 </tr>
                 <tr class="input-box">
@@ -41,7 +41,7 @@
                     >
                   </th>
                   <td>
-                    <input type="search" class="input-block" v-model="category_name" />
+                    <input type="search" class="input-block" id="category_name" v-model="category_name" />
                   </td>
                 </tr>
                 <tr class="input-box">

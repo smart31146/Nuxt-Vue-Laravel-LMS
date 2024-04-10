@@ -34,18 +34,21 @@
               >ログアウト</span
             >
           </li>
-          <li class="gnav-item">
-            <NuxtLink class="gnav-link" to="/service-admin/curriculums/create"
-              >新規追加</NuxtLink
-            >
-          </li>
+         
         </ul>
       </nav>
     </div>
     <div class="content">
       <div class="inner">
         <section class="category table-page">
-          <h1 class="sec-title curriculum-title">カリキュラム管理</h1>
+          <div class="flex justify-between items-center mb-4 p-4">
+            <h1 class="text-xl md:text-3xl lg:text-5xl category-title">カテゴリ管理</h1>
+          
+            <NuxtLink class="text-xl md:text-3xl lg:text-5xl" to="/service-admin/curriculums/create"
+              >新規追加</NuxtLink
+            >
+          
+        </div>
           <form class="form curriculum-form">
             <table class="form-table">
               <tbody class="form-tbody">
@@ -99,7 +102,7 @@
                 </tr>
                 <tr class="select-box">
                   <th>
-                    <label for="requiredーoptional" class="label-name"
+                    <label class="label-name"
                       >必修/任意</label
                     >
                   </th>
@@ -114,7 +117,7 @@
                 </tr>
                 <tr class="select-box">
                   <th>
-                    <label for="curriculum-type" class="label-name"
+                    <label class="label-name"
                       >カリキュラム種別</label
                     >
                   </th>
@@ -129,7 +132,7 @@
                 </tr>
                 <tr class="select-box">
                   <th>
-                    <label for="hierarchy" class="label-name">公開タイプ</label>
+                    <label class="label-name">公開タイプ</label>
                   </th>
                   <td>
                     <SelectComponent
@@ -142,7 +145,7 @@
                 </tr>
                 <tr class="select-box">
                   <th>
-                    <label for="situation" class="label-name">状態</label>
+                    <label class="label-name">状態</label>
                   </th>
                   <td class="last">
                     <SelectComponent

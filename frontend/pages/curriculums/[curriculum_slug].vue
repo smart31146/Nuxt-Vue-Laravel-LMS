@@ -6,62 +6,100 @@
 </Html>
 
 <section>
-<p class="u-margin-bottom--1_5rem u-margin-left--auto u-margin-right--auto u-width--fit-content"><img :src="curriculum_image" class="u-border__all--0_0625rem-brown u-border-radius--0_5rem"></p>
-
-<h1 class="u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem u-text-align--center"><span class="u-color--green u-margin-right--0_5rem" v-if="is_required_label">[必須]</span>{{ curriculum_name }}</h1>
-
-<div class="u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem u-width__min--95vw-50rem" v-html="curriculum_text" v-if="curriculum_text !== undefined"></div>
-
-<p class="u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem u-width__min--95vw-50rem" v-if="movie_url !== undefined">
-<MediaManagementComponent
-media_kind="youtube"
-:url="movie_url"
-:is_member="false"
-:is_completed="true"
-v-if="movie_url !== undefined && is_youtube"
-/>
-<MediaManagementComponent
-media_kind="vimeo"
-:url="movie_url"
-:is_member="false"
-:is_completed="true"
-v-if="movie_url !== undefined && is_vimeo"
-/>
-</p>
-
-<p class="u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem u-width--fit-content" v-if="curriculum_type === '2'">
-<MediaManagementComponent
-media_kind="audio_file"
-:url="audio_file"
-:is_member="false"
-:is_completed="true"
-v-if="audio_file !== undefined"
-/>
-</p>
-<p class="u-margin-bottom--0_375rem u-margin-left--auto u-margin-right--auto u-width--fit-content" v-if="pdf_file">参考資料</p>
-<ul class="u-display--flex u-flex__justify_content--center u-flex__gap--0_5rem" v-if="pdf_file">
-<li class="u-margin-bottom--0_75rem" v-if="pdf_file1 !== undefined">
-<NuxtLink :to="pdf_file1" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
-</li>
-<li class="u-margin-bottom--0_75rem" v-if="pdf_file2 !== undefined">
-<NuxtLink :to="pdf_file2" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
-</li>
-<li class="u-margin-bottom--0_75rem" v-if="pdf_file3 !== undefined">
-<NuxtLink :to="pdf_file3" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
-</li>
-<li class="u-margin-bottom--0_75rem" v-if="pdf_file4 !== undefined">
-<NuxtLink :to="pdf_file4" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
-</li>
-<li class="u-margin-bottom--0_75rem" v-if="pdf_file5 !== undefined">
-<NuxtLink :to="pdf_file5" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
-</li>
-</ul>
-
-<p class="u-margin-bottom--1_5rem u-margin-left--auto u-margin-right--auto u-width--fit-content">カテゴリ名:{{ category_name }} / {{ is_required }}</p>
+    <div class="mt-60 m-auto">
+       
+          <section class="category table-page">
+            <form class="form curriculum-form">
+                <div className="p-4 text-2xl md:text-3xl text-center text-white bg-blue-600">{{ curriculum_name }}</div>
+                 <div class="vieo-td w-full md:w-10/12 m-auto mt-8 curriculum-video" v-if="movie_url !== undefined">
+                    
+                        <MediaManagementComponent
+                        media_kind="youtube"
+                        :url="movie_url"
+                        :is_member="true"
+                        :is_completed="is_completed"
+                        :user_id="user_id"
+                        :curriculum_slug="curriculum_slug"
+                        :content_id="content_id"
+                        :startFrame="startFrame"
+                        v-if="movie_url !== undefined && is_youtube"
+                        :key="mediaUpdate"
+                        />
+                        <MediaManagementComponent
+                        media_kind="vimeo"
+                        :url="movie_url"
+                        :is_member="true"
+                        :is_completed="is_completed"
+                        :user_id="user_id"
+                        :curriculum_slug="curriculum_slug"
+                        :content_id="content_id"
+                        :startFrame="startFrame"
+                        v-if="movie_url !== undefined && is_vimeo"
+                        :key="mediaUpdate"
+                        />
+                    
+                  </div>
+                  <div class="flex justify-center vieo-td text-center w-full m-auto mt-8 curriculum-video" v-if="curriculum_type === '2'">
+                    
+                        <MediaManagementComponent
+                        media_kind="audio_file"
+                        :url="audio_file"
+                        :is_member="true"
+                        :is_completed="is_completed"
+                        :user_id="user_id"
+                        :curriculum_slug="curriculum_slug"
+                        :content_id="content_id"
+                        :startFrame="startFrame"
+                        v-if="audio_file !== undefined"
+                        :key="mediaUpdate"
+                        />
+                    
+                  </div>
+                <div className="mt-8 mb-4 grid grid-cols-1 lg:grid-cols-2 border border-b border-gray-400  ">
+                    <div class="bg-customPink text-3xl text-center p-4 ">カテゴリ名</div>
+                    <div className="text-3xl text-center p-4 lg:border-l border-gray-400">
+                        {{ category_name }} / {{ is_required }}
+                    </div>
+                </div>
+                <div className="mb-4 grid grid-cols-1 lg:grid-cols-2 border border-b border-gray-400  ">
+                    <div class="bg-customPink text-3xl text-center p-4 ">PDFファイル</div>
+                    <div className="text-3xl text-center p-4 lg:border-l border-gray-400">
+                        <ul>
+                            <li class="u-margin-bottom--0_75rem" v-if="pdf_file1 !== undefined">
+                            <NuxtLink :to="pdf_file1" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
+                            </li>
+                            <li class="u-margin-bottom--0_75rem" v-if="pdf_file2 !== undefined">
+                            <NuxtLink :to="pdf_file2" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
+                            </li>
+                            <li class="u-margin-bottom--0_75rem" v-if="pdf_file3 !== undefined">
+                            <NuxtLink :to="pdf_file3" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
+                            </li>
+                            <li class="u-margin-bottom--0_75rem" v-if="pdf_file4 !== undefined">
+                            <NuxtLink :to="pdf_file4" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
+                            </li>
+                            <li class="u-margin-bottom--0_75rem" v-if="pdf_file5 !== undefined">
+                            <NuxtLink :to="pdf_file5" target="_blank" class="u-text-decoration--underline"><span class="u-font-size--1_5rem"><i class="fa fa-file-pdf"></i></span></NuxtLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="mb-4 grid grid-cols-1 lg:grid-cols-2 border border-b border-gray-400  ">
+                    <div class="bg-customPink text-3xl text-center p-4 ">カリキュラム内容</div>
+                    <div className="text-3xl text-center p-4 lg:border-l border-gray-400" v-html="curriculum_text"></div>
+                </div>
+                 
+             
+             
+              <button class="m-auto w-full md:w-1/4 text-2xl py-4 mb-4 flex justify-center text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><NuxtLink to="/user/dashboard" class="u-text-decoration--underline">カリキュラム一覧に戻る</NuxtLink></button>
+              <button class="m-auto w-full md:w-1/4 text-2xl py-4 mb-4 flex justify-center text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><NuxtLink to="/user/curriculums" class="u-text-decoration--underline">受講履歴に戻る</NuxtLink></button>
+              
+            </form>
+          </section>
+      
+      </div>
 
 </section>
 </template>
-
 <script setup lang="ts">
 import type { SelectOptionItems, CurriculumDirPath, Curriculum } from '@/types/index';
 import { AuthorityRank, CurriculumType, RequiredType, ReleaseType } from '@/types/const';
@@ -394,5 +432,8 @@ const title = computed(() => {
 });
 useHead({
     title,
+});
+definePageMeta({
+    layout: 'user-before-login',
 });
 </script>

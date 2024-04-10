@@ -34,18 +34,21 @@
               >ログアウト</span
             >
           </li>
-          <li class="gnav-item">
-            <NuxtLink class="gnav-link" to="/service-admin/user/create"
-              >新規追加</NuxtLink
-            >
-          </li>
+         
         </ul>
       </nav>
     </div>
     <div class="content">
       <div class="inner">
         <section class="user table-page">
-          <h1 class="sec-title user-title">ユーザー管理</h1>
+          <div class="flex justify-between items-center mb-4 p-4">
+            <h1 class="text-xl md:text-3xl lg:text-5xl category-title">カテゴリ管理</h1>
+          
+            <NuxtLink class="text-xl md:text-3xl lg:text-5xl" to="/service-admin/user/create"
+              >新規追加</NuxtLink
+            >
+          
+        </div>
           <form class="form user-form">
             <table class="form-table">
               <tbody class="form-tbody">

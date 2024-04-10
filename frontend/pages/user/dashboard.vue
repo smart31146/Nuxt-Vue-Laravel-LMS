@@ -7,48 +7,72 @@
 
 
 <section>
- 
-<button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-  <span class="sr-only">Open sidebar</span>
-  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-  <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-  </svg>
-</button>
-
-<aside id="sidebar-multi-level-sidebar" class="fixed top-32 left-0 z-40 w-96 h-screen transition-transform -translate-x-full sm:translate-x-0 shadow-lg rounded-lg" aria-label="Sidebar">
-  <div class="h-full px-4 py-5 overflow-y-auto bg-white dark:bg-gray-900">
-     <ul class="space-y-3" v-if="category_data?.length > 0">
-        <li>
-           <a href="#" class="flex items-center mb-5 p-3 text-4xl text-gray-800 rounded-md dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 group">
-            <span class="inline-flex items-center justify-center h-14 w-14 text-xl"><IconFolderCog/></span>
-              <h2 class="text-lg font-semibold text-gray-900 dark:text-white">カテゴリ</h2>
-           </a>
-           <ul class="flex flex-col pl-10">
-            <li class="mb-5" v-for="(item, i) in category_data" :key="i">
-              <span class="text-3xl text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white" @click="category_search(item.category_name)">{{ item.category_name }}</span>
-              <ul class="flex flex-col pl-10">
-                <li class="mt-3  transform hover:translate-x-2 transition-transform ease-in duration-200 text-2xl text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white" v-for="(curriculum_item, i) in item['curriculums']" :key="i">
-                  <NuxtLink :to="`/user/curriculums/${curriculum_item.curriculum_slug}`"><span>{{ curriculum_item.curriculum_name }}</span></NuxtLink>
-                  
-                </li>
-                
-              </ul>
-            </li>
-            
-          </ul>
-        </li>
-        
-     </ul>
+<aside id="sidebar-multi-level-sidebar" class="hidden md:block fixed top-32 left-0 z-9 w-96 h-screen shadow-lg rounded-lg" aria-label="Sidebar">
+  <div class="h-full px-4 py-5 overflow-y-auto bg-gray-900 dark:bg-gray-900">
+     <div v-if="category_data?.length > 0" class="space-y-4">
+     
+        <div class="flex items-center justify-between mb-5 p-3 bg-gray-100 dark:bg-gray-800 rounded-lg">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">カテゴリ</h2>
+            <IconFolderCog class="h-6 w-6 text-gray-900 dark:text-white"/>
+        </div>
+        <div class="space-y-2">
+          <div v-for="(item, i) in category_data" :key="`category-${i}`" class="pl-4">
+            <button v-if="item['curriculums'].length>0" class="text-2xl font-semibold text-left text-white dark:text-gray-200 hover:underline" @click="category_search(item.category_name)">
+              {{ item.category_name }}
+           
+            </button>
+            <div v-for="(curriculum_item, j) in item['curriculums']" :key="`curriculum-${j}`" class="mt-2 pl-6 hover:bg-sky-100">
+              <NuxtLink :to="`/user/curriculums/${curriculum_item.curriculum_slug}`" 
+              class="block text-2xl text-gray-400 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              v-if="curriculum_item.authority_ranks==0 || userInfo.user_rank==curriculum_item.authority_ranks">
+                {{ curriculum_item.curriculum_name }}
+              
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+     </div>
   </div>
+  
+</aside>
+
+<aside id="sidebar-multi-level-sidebar" class="nav-area fixed md:hidden -top-2 left-0 z-10 w-96 h-screen shadow-lg rounded-lg" :class="{ 'is_open': store.state.stateIsMenuOpen }" aria-label="Sidebar">
+  <div class="h-full px-4 py-5 overflow-y-auto bg-gray-900 dark:bg-gray-900">
+     <div v-if="category_data?.length > 0" class="space-y-4">
+     
+        <div class="flex items-center justify-between mb-5 p-3 bg-gray-100 dark:bg-gray-800 rounded-lg">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">カテゴリ</h2>
+            <IconFolderCog class="h-6 w-6 text-gray-900 dark:text-white"/>
+        </div>
+        <div class="space-y-2">
+          <div v-for="(item, i) in category_data" :key="`category-${i}`" class="pl-4">
+            <button v-if="item['curriculums'].length>0" class="text-2xl font-semibold text-left text-white dark:text-gray-200 hover:underline" @click="category_search(item.category_name)">
+              {{ item.category_name }}
+           
+            </button>
+            <div v-for="(curriculum_item, j) in item['curriculums']" :key="`curriculum-${j}`" class="mt-2 pl-6 hover:bg-sky-100">
+              <NuxtLink :to="`/user/curriculums/${curriculum_item.curriculum_slug}`" 
+              class="block text-2xl text-gray-400 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              v-if="curriculum_item.authority_ranks==0 || userInfo.user_rank==curriculum_item.authority_ranks">
+                {{ curriculum_item.curriculum_name }}
+              
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+     </div>
+  </div>
+  
 </aside>
 
 <div class="p-4 sm:ml-96 mt-32">
   <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
-    <div class="flex justify-start gap-4 w-full items-baseline text-xl">
+    <div class="flex justify-between w-full items-baseline text-xl">
       <h1 class="text-2xl sm:text-5xl leading-5 sec-title my-12">カリキュラム管理</h1>
-      <h3>全て</h3>
-      <h3>受講中</h3>
-      <h3>受講済み</h3>
+      <NuxtLink @click.prevent="setStateIsMenuOpen" ><div class="flex md:hidden border border-gray-900 items-center justify-between mb-5 p-3 bg-gray-100 dark:bg-gray-800 rounded-lg">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">カテゴリ</h2>
+            <IconFolderCog class="h-6 w-6 text-gray-900 dark:text-white"/>
+        </div></NuxtLink>
     </div>
     
     <div class="mb-3">
@@ -85,8 +109,8 @@
   <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
 
     <ul class="grid lg:grid-cols-4 grid-cols-2 gap-4 mb-4" v-if="curriculum_data?.length > 0">
-        <li v-for="(item, i) in curriculum_data" :key="i" class="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-           <p class="text-2xl text-gray-400 dark:text-gray-500">
+        <li v-for="(item, i) in curriculum_data" :key="i" class="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800 hover:scale-105 transition-transform duration-200">
+           <p class="text-2xl text-gray-600 dark:text-gray-500">
             <CardCurriculumComponent
             mode="/user"
             :curriculum_slug="item.curriculum_slug"
@@ -118,7 +142,7 @@
 import type { SelectOptionItems,  CategoryData, CurriculumDirPath, CurriculumData, PaginatedResponse, DataType } from '@/types/index';
 import { CurriculumType } from '@/types/const';
 import { useToString } from '@vueuse/core';
-import store from "@/store";
+
 import { IconFolderCog } from '@tabler/icons-vue';
 
 let fd: FormData;
@@ -130,6 +154,7 @@ const curriculum_data = ref<CurriculumData| null>();
 const curriculumTypeSelect = ref(null);
 const curriculumTypeOptions = ref(<SelectOptionItems>[]);
 const curriculum_name = ref('');
+const user_rank= ref('');
 const category_name = ref('');
 const curriculum_dir_path = ref<CurriculumDirPath>();
 const image_path = ref('');
@@ -148,6 +173,16 @@ const {
   recoverCategory,
   setCategoryName,
 } = category();
+import store from "@/store";
+import { ref } from 'vue';
+
+const stateIsMenuOpen = ref(store.state.stateIsMenuOpen);
+
+const setStateIsMenuOpen = () => {
+	isMenuOpen.value = !isMenuOpen.value;
+  store.state.stateIsMenuOpen = isMenuOpen.value;
+  
+};
 
 const erase = () =>
 {
@@ -155,6 +190,7 @@ const erase = () =>
     eraseForm();
     
 }
+
 
 const category_search = (category_name: string) =>
 {
@@ -252,21 +288,22 @@ const init = async () =>
     fd.append('created_at', useToString(userInfo.value['created_at']).value.replace('T', ' '));
     fd.append('order_item', 'created_at');
     fd.append('order_by', 'DESC');
-
+   
+    
     [curriculum_object.value, category_all.value,category_data.value, curriculum_dir_path.value] = await Promise.all([
         getAllCurriculumData('user', 1, fd),
-        getActiveCategory(),
-        getAllCategoryData(),
+        getActiveCategory('user', 1, fd),
+        getAllCategoryData('user', 1, fd),
         getCurriculumDirectoryPath()
     ]);
-
+    
+    
     curriculum_data.value = curriculum_object.value['data'];
     category_data.value = category_data.value['data']
     // category_data1.value = category_data.value
     image_path.value =curriculum_dir_path.value.image_path;
     no_image_path.value = curriculum_dir_path.value.no_image_path;
 
-    console.log(curriculum_data.value,"test", category_data.value, category_all.value)
     
   // [category_object.value, parent_category_data.value] = await Promise.all([
   //   getAllCategoryData(1),

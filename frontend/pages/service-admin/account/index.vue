@@ -30,22 +30,30 @@
             >
           </li>
           <li class="gnav-item">
+            <NuxtLink to="/service-admin/account/" class="gnav-link"
+              >修了証管理</NuxtLink
+            >
+          </li>
+          <li class="gnav-item">
             <span @click.prevent="logout" class="gnav-link logout"
               >ログアウト</span
             >
           </li>
-          <li class="gnav-item">
-            <NuxtLink class="gnav-link" to="/service-admin/account/create"
-              >新規追加</NuxtLink
-            >
-          </li>
+         
         </ul>
       </nav>
     </div>
     <div class="content">
       <div class="inner">
         <section class="account table-page">
-          <h1 class="sec-title account-title">管理アカウント管理</h1>
+          <div class="flex justify-between items-center mb-4 p-4">
+            <h1 class="text-xl md:text-3xl lg:text-5xl category-title">カテゴリ管理</h1>
+          
+            <NuxtLink class="text-xl md:text-3xl lg:text-5xl" to="/service-admin/account/create"
+              >新規追加</NuxtLink
+            >
+            
+        </div>
           <form class="form account-form">
             <table class="form-table">
               <tbody class="form-tbody">
@@ -67,7 +75,7 @@
                 </tr>
                 <tr class="select-box">
                   <th>
-                    <label for="administrator-type" class="label-name"
+                    <label class="label-name"
                       >管理者タイプ</label
                     >
                   </th>
@@ -82,7 +90,7 @@
                 </tr>
                 <tr class="select-box">
                   <th>
-                    <label for="situation" class="label-name">状態</label>
+                    <label class="label-name">状態</label>
                   </th>
                   <td class="last">
                     <SelectComponent

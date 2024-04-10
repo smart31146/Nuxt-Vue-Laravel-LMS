@@ -50,7 +50,6 @@ const stateIsMenuOpen = ref(store.state.stateIsMenuOpen);
 const setStateIsMenuOpen = () => {
 	isMenuOpen.value = !isMenuOpen.value;
   store.state.stateIsMenuOpen = isMenuOpen.value;
-  console.log("store",store.state.stateIsMenuOpen);
   
 };
 const logout = async () => {

@@ -1,13 +1,13 @@
 <template>
 
-<Player
+<Player class="custom-player"
 :controls="props.is_seeker"
 :currentTime="props.startFrame"
 @vmCurrentTimeChange="timeChange"
 @vmPlaybackEnded="ended"
 @vmDurationChange="durationChange"
 >
-<Youtube
+<Youtube class="custom-player"
 :videoId="props.url"
 />
 <Ui v-if="!props.is_seeker">

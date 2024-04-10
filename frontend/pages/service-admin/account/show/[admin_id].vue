@@ -26,7 +26,7 @@
               <tbody class="form-tbody">
                 <tr class="input-box">
                   <th>
-                    <label for="administrator-name" class="label-name"
+                    <label class="label-name"
                       >管理者名</label
                     >
                   </th>
@@ -36,7 +36,7 @@
                 </tr>
                 <tr class="input-box">
                   <th>
-                    <label for="email" class="label-name">E-Mail</label>
+                    <label class="label-name">E-Mail</label>
                   </th>
                   <td>
                     {{ admin_email }}
@@ -44,7 +44,7 @@
                 </tr>
                 <tr class="input-box">
                   <th>
-                    <label for="start-date" class="label-name"
+                    <label class="label-name"
                       >利用開始日</label
                     >
                   </th>
@@ -54,7 +54,7 @@
                 </tr>
                 <tr class="input-box">
                   <th>
-                    <label for="end-date" class="label-name">利用終了日</label>
+                    <label class="label-name">利用終了日</label>
                   </th>
                   <td class="last">
                     {{ end_date }}

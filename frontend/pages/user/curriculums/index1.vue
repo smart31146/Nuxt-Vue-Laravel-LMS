@@ -12,60 +12,87 @@
           <section class="category table-page">
             <h1 class="sec-title curriculum-title">受講履歴</h1>
             <form class="form curriculum-form">
-              <div className="mb-8 grid grid-cols-1 lg:grid-cols-2 border-l border-r border-b border-gray-400  ">
-                <div className="text-2xl border-t border-gray-400 bg-customPink p-4"> カリキュラム名 </div>
+              <table class="form-table">
+                <tbody class="form-tbody">
                   
-                  <div className="lg:border-l border-t border-gray-400 p-4"> <input
-                    type="search"
-                    v-model="curriculum_name"
-                    class="w-full text-3xl"
-                    id="curriculum-name"
-                    name="curriculum-name"
-                  /></div>
-                  <div className="text-2xl border-t border-gray-400 bg-customPink p-4"> カテゴリ名 </div>
-                    
-                  <div className="lg:border-l border-t border-gray-400 p-4"> <input
-                    type="search"
-                    v-model="category_name"
-                    class="w-full text-3xl"
-                    id="category-name"
-                    name="category-name"
-                  /></div>
-                  <div className="text-2xl border-t  border-gray-400 bg-customPink p-4"> 必修/任意 </div>
-                    
-                  <div className="lg:border-l border-t  border-gray-400 p-2"> 
-                  <SelectComponent
-                          ref="requiredTypeSelect"
-                          item_name="required_type"
-                          defaultValue=""
-                          :data="requiredTypeOptions"
-                        />
-                  </div> 
-                  <div className="text-2xl border-t border-gray-400 bg-customPink p-4"> 
-                  カリキュラム種別 </div>
-                    
-                  <div className="lg:border-l border-t border-gray-400 p-2"> 
-                   <SelectComponent
+                  <tr class="input-box">
+                    <th>
+                      <label for="curriculum-name" class="label-name"
+                        >カリキュラム名</label
+                      >
+                    </th>
+                    <td>
+                      <input
+                        type="search"
+                        v-model="curriculum_name"
+                        class="input-block"
+                        id="curriculum-name"
+                        name="curriculum-name"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="input-box">
+                    <th>
+                      <label for="category-name" class="label-name"
+                        >カテゴリ名</label
+                      >
+                    </th>
+                    <td>
+                      <input
+                        type="search"
+                        v-model="category_name"
+                        class="input-block"
+                        id="category-name"
+                        name="category-name"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="select-box">
+                    <th>
+                      <label for="requiredーoptional" class="label-name"
+                        >必修/任意</label
+                      >
+                    </th>
+                    <td>
+                      <SelectComponent
+                        ref="requiredTypeSelect"
+                        item_name="required_type"
+                        defaultValue=""
+                        :data="requiredTypeOptions"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="select-box">
+                    <th>
+                      <label for="curriculum-type" class="label-name"
+                        >カリキュラム種別</label
+                      >
+                    </th>
+                    <td>
+                      <SelectComponent
                         ref="curriculumTypeSelect"
                         item_name="curriculum_type"
                         defaultValue=""
                         :data="curriculumTypeOptions"
                       />
-                  </div> 
-                  <div className="text-2xl border-t border-gray-400 bg-customPink p-4"> 
-                  状態 </div>
-                    
-                  <div className="lg:border-l border-t border-gray-400 p-2"> 
-                    <SelectComponent
+                    </td>
+                  </tr>
+                 
+                  <tr class="select-box">
+                    <th>
+                      <label for="situation" class="label-name">状態</label>
+                    </th>
+                    <td class="last">
+                      <SelectComponent
                         ref="statusSelect"
                         item_name="status"
                         defaultValue=""
                         :data="statusOptions"
                       />
-                  </div>   
-                </div>
-
-              
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
               <button class="serch-btn" @click.prevent="search">
                 <i class="fa-solid fa-magnifying-glass fa-icon"></i>
               </button>

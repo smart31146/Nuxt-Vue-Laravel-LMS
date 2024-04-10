@@ -32,7 +32,7 @@
     "@tinymce/tinymce-vue": "^5.1.1",
     "@vime/core": "^5.4.1",
     "@vime/vue-next": "^5.4.1",
-    "@vueuse/core": "^10.7.2",
+    "@vueuse/core": "^10.5.0",
     "@vueuse/nuxt": "^10.5.0",
     "flowbite": "^2.2.1",
     "laravel-vue-pagination": "^4.1.1",
