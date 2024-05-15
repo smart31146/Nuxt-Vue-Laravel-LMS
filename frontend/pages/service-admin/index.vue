@@ -8,6 +8,7 @@
   <div class="login">
     <div class="login-inner">
       <h1 class="sec-title login-title">運営者ログイン</h1>
+      <p v-if="errorMessage" class="text-red-600 text-center">{{ errorMessage }}</p>
       <form class="login-form">
         <div class="login-block login-email">
           <label for="email" class="label-name">E-Mail</label>
@@ -45,7 +46,7 @@ import type { AdminLoginInfo } from "@/types/index";
 
 const admin_email = ref("");
 const password = ref("");
-const error_message = ref<HTMLParagraphElement | null>(null);
+const errorMessage = ref("");
 const { adminLogin } = useAuth();
 
 const login = async () => {
@@ -54,8 +55,12 @@ const login = async () => {
     password: password.value,
   };
  
-  await adminLogin(loginInfo);
-  
+  const result = await adminLogin(loginInfo);
+  errorMessage.value = result; // Assuming 'result' is the error message string
+
+  if (errorMessage.value) {
+    window.scroll({ top: 0, behavior: "smooth" });
+  }
 };
 
 definePageMeta({

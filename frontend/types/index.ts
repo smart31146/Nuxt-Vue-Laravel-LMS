@@ -79,6 +79,8 @@ export interface RequestCertificate
     user_id: number;
     user_name: string;
     created_at: Date;
+    certified_date: Date;
+    status: string;
 }
 
 export interface RequestCertificateData extends Array<RequestCertificate>{};

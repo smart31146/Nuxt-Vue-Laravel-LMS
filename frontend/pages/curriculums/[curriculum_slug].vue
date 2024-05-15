@@ -86,12 +86,10 @@
                 <div className="mb-4 grid grid-cols-1 lg:grid-cols-2 border border-b border-gray-400  ">
                     <div class="bg-customPink text-3xl text-center p-4 ">カリキュラム内容</div>
                     <div className="text-3xl text-center p-4 lg:border-l border-gray-400" v-html="curriculum_text"></div>
-                </div>
-                 
+                </div>            
              
-             
-              <button class="m-auto w-full md:w-1/4 text-2xl py-4 mb-4 flex justify-center text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><NuxtLink to="/user/dashboard" class="u-text-decoration--underline">カリキュラム一覧に戻る</NuxtLink></button>
-              <button class="m-auto w-full md:w-1/4 text-2xl py-4 mb-4 flex justify-center text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><NuxtLink to="/user/curriculums" class="u-text-decoration--underline">受講履歴に戻る</NuxtLink></button>
+              <NuxtLink to="/" class="u-text-decoration--underline"><button class="m-auto w-full md:w-1/4 text-2xl py-4 mb-4 flex justify-center text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">カリキュラム一覧に戻る</button></NuxtLink>
+        
               
             </form>
           </section>

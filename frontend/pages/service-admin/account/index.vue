@@ -10,6 +10,12 @@
       <nav class="gnav">
         <ul class="gnav-list">
           <li class="gnav-item">
+            
+              <NuxtLink to="/service-admin/dashboard/" class="gnav-link"
+                >修了証管理</NuxtLink
+              >
+          </li>
+          <li class="gnav-item">
             <NuxtLink to="/service-admin/categories/" class="gnav-link"
               >カテゴリ管理</NuxtLink
             >
@@ -29,11 +35,7 @@
               >管理者アカウント管理</NuxtLink
             >
           </li>
-          <li class="gnav-item">
-            <NuxtLink to="/service-admin/account/" class="gnav-link"
-              >修了証管理</NuxtLink
-            >
-          </li>
+          
           <li class="gnav-item">
             <span @click.prevent="logout" class="gnav-link logout"
               >ログアウト</span
