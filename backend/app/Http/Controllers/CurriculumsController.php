@@ -967,7 +967,9 @@ class CurriculumsController extends Controller
         return Certificate::selectRaw('
                         users.user_id,
                         users.user_name,
-                        certificates.created_at
+                        certificates.created_at,
+                        certificates.certified_date,
+                        certificates.status
                     ')->
                     join('users', 'users.user_id', '=', 'certificates.user_id')->
                     where('users.status', 'A')->

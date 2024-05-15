@@ -9,6 +9,12 @@
     <div class="nav-area" :class="{ 'is_open': store.state.stateIsMenuOpen }">
       <nav class="gnav">
         <ul class="gnav-list">
+         <li class="gnav-item">
+            
+              <NuxtLink to="/service-admin/dashboard/" class="gnav-link"
+                >修了証管理</NuxtLink
+              >
+          </li>
           <li class="gnav-item">
             <NuxtLink to="/service-admin/categories/" class="gnav-link"
               >カテゴリ管理</NuxtLink
@@ -45,27 +51,28 @@
             修了証の申請があったユーザー
           </h1>
           
-          <div class="table-area">
-            <div class="table-inner">
-              <table class="curriculum-table table">
+          <div class="overflow-x-auto mx-2 p-2 pt-8 md:p-8 rounded-xl bg-white">
+           
+              <table class="min-w-full">
                 <thead>
-                  <tr>
-                    <th>ユーザー名</th>
-                    <th>申請日時</th>
-                    <th>操作</th>
+                  <tr class="h-[30px] text-[16px] text-white bg-[#5199F6] whitespace-nowrap">
+                    <th class="px-3 py-4">ユーザー名</th>
+                    <th class="px-3 py-4">申請日時</th>
+                    <th class="px-3 py-4">操作</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(item, i) in user_data" :key="i">
-                    <td>
+                  <tr class="h-[30px] text-[10px] md:text-[14px] whitespace-nowrap" v-for="(item, i) in user_data" :key="i" >
+                    <td class="px-3 py-2" v-if="item.status==='R'">
                       <NuxtLink
                         :to="`/service-admin/account/show/${item.user_id}`"
                         class="u-text-decoration--underline"
                         >{{ item.user_name }}</NuxtLink
                       >
+                     
                     </td>
-                    <td>{{ dateTimeFormat(item.created_at).value }}</td>
-                    <td>
+                    <td v-if="item.status==='R'" class="px-3 py-2" >{{ dateTimeFormat(item.created_at).value }}</td>
+                    <td v-if="item.status==='R'" class="pl-4" >
                       <ul class="u-display--flex u-flex__gap--0_5rem">
                         <li>
                           <span
@@ -79,7 +86,40 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
+            
+          </div>
+        </section>
+        <section class="dashboard table-page">
+        
+          <h1 class="sec-title dashboard-title">
+            過去に修了証を申請した人
+          </h1>
+          
+          <div class="overflow-x-auto mx-2 p-2 pt-8 md:p-8 rounded-xl bg-white">
+          
+              <table class="min-w-full">
+                <thead>
+                  <tr class="h-[30px] text-[16px] text-white bg-[#5199F6] whitespace-nowrap">
+                    <th class="px-3 py-4">ユーザー名</th>
+                    <th class="px-3 py-4">授与日時</th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="h-[30px] text-[10px] md:text-[14px] whitespace-nowrap" v-for="(item, i) in user_data" :key="i">
+                    <td class="px-3 py-2" v-if="item.status==='C'">
+                      <NuxtLink
+                        :to="`/service-admin/account/show/${item.user_id}`"
+                        class="u-text-decoration--underline"
+                        >{{ item.user_name }}</NuxtLink
+                      >
+                    </td>
+                    <td class="px-3 py-2" v-if="item.status==='C'">{{ dateTimeFormat(item.certified_date).value }}</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+          
           </div>
         </section>
       </div>
