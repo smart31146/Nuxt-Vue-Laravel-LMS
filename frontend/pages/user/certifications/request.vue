@@ -6,9 +6,13 @@
 </Html>
 
 <section>
-<p class="u-width__min--95vw-64rem u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem u-text-align--right"><NuxtLink to="/user/certifications" class="u-text-decoration--underline">元に戻る</NuxtLink></p>
-<h1 class="u-width__min--95vw-64rem u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem">修了証の申請完了</h1>
-<p class="u-width__min--95vw-48rem u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem">修了証の申請が完了しました。</p>
+<div class="w-full pt-64 m-auto flex flex-col gap-4 justify-center items-center mb-12">
+    
+    <h1 class="text-3xl md:text-5xl">修了証の申請完了</h1>
+    <p class="text-2xl md:text-3xl">修了証の申請が完了しました。</p>
+    <p class="mt-8 text-2xl md:text-3xl underline"><NuxtLink to="/user/certifications" class="u-text-decoration--underline">元に戻る</NuxtLink></p>
+</div>
+
 </section>
 </template>
 

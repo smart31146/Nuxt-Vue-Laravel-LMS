@@ -13,7 +13,6 @@ use App\Models\Admin;
 use Auth;
 use Validator;
 use Log;
-use Psy\Readline\Hoa\Console;
 
 class LoginController extends Controller
 {
@@ -26,6 +25,7 @@ class LoginController extends Controller
      */
     public function user_login(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
             'user_email' => 'required|email',
             'password' => 'required|min:8',
@@ -90,6 +90,7 @@ class LoginController extends Controller
      */
     public function admin_login(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
             'admin_email' => 'required|email',
             'password' => 'required|min:8',

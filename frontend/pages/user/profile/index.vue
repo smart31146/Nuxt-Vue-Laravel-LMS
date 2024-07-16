@@ -9,122 +9,112 @@
     
       <div class="m-auto mt-32">
         <div class="inner">
-          <section class="category table-page">
+          <section class="category table-page m-auto pt-8">
             <h1 class="result sec-title curriculum-title">ユーザー詳細</h1>
-            <form class="form curriculum-form">
-              <table class="form-table">
-                <tbody class="form-tbody">
-                  <tr class="input-box">
-                    <th>
-                      <label class="label-name"
-                        >ユーザー名</label
-                      >
+            <form class="mt-34 mb-24 px-8 py-12 bg-white m-auto">
+              <table class="w-full text-2xl border-2 bg-white">
+                <tbody class="w-full">
+                  <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                       ユーザー名
+                      
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ user_name }}
                     </td>
                   </tr>
-                  <tr class="input-box">
-                    <th>
-                      <label class="label-name"
-                        >E-Mail</label
-                      >
+                   <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                     E-Mail                     
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ user_email }}
                     </td>
                   </tr>
-                  <tr class="input-box">
-                    <th>
-                      <label class="label-name"
-                        >氏名</label
-                      >
+                   <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                      氏名
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ sei }} {{ mei }}
                     </td>
                   </tr>
-                  <tr class="select-box">
-                    <th>
-                      <label class="label-name">カナ</label>
+                   <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                      カナ
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ sei_kana }} {{ mei_kana }}
                     </td>
                   </tr>
-                  <tr class="input-box">
-                    <th>
-                      <label class="label-name"
-                        >性別</label
-                      >
+                   <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                      性別
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ sex }}
                     </td>
                   </tr>
-                  <tr class="select-box">
-                    <th>
-                      <label class="label-name">電話番号</label>
+                   <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                      電話番号
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ tel }}
                     </td>
                   </tr>
-                  <tr class="input-box">
-                    <th>
-                      <label class="label-name"
-                        >郵便番号</label
-                      >
+                   <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                      郵便番号
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ zip }}
                     </td>
                   </tr>
-                  <tr class="select-box">
-                    <th>
-                      <label class="label-name">都道府県</label>
+                   <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                      都道府県
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ prefecture }}
                     </td>
                   </tr>
-                  <tr class="select-box">
-                    <th>
-                      <label class="label-name">住所（市区町村番地）</label>
+                   <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                      住所（市区町村番地）
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ address_01 }}
                     </td>
                   </tr>
-                  <tr class="input-box">
-                    <th>
-                      <label class="label-name"
-                        >住所（マンション名号室）</label
-                      >
+                   <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                     住所（マンション名号室）
+                 
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ address_02 }}
                     </td>
                   </tr>
-                  <tr class="select-box">
-                    <th>
-                      <label class="label-name">会員ランク</label>
+                   <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                      会員ランク
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ user_rank }}
                     </td>
                   </tr>
-                  <tr class="select-box">
-                    <th>
-                      <label class="label-name">ユーザータイプ</label>
+                   <tr class="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <th class="bg-[#eff4f9] px-3 py-1 border h-[35px]">
+                      ユーザータイプ
                     </th>
-                    <td>
+                    <td class="px-3 py-1 border h-[35px]">
                         {{ user_type}}
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <button class="serch-btn btn"><NuxtLink to="/user/profile/edit">編集する</NuxtLink></button>
+              <button class="serch-btn btn w-full flex justify-center items-center mt-4"><NuxtLink to="/user/profile/edit">編集する</NuxtLink></button>
             </form>
           </section>
         </div>

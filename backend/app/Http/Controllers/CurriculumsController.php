@@ -201,10 +201,31 @@ class CurriculumsController extends Controller
         }
         
         $curriculums = $query->with('categories')->paginate(20);
+        $query1 = TakingCurriculum::query();
+        $takings= [];
+        if ($request->has('user_id'))
+        {
+
+            $takings = $query1->where('taking_curriculums.user_id', $request->user_id)->get();
+
+            if($takings){
+                foreach($curriculums as $curriculum){
+                    foreach($takings as $taking){
+                        if($curriculum->curriculum_slug === $taking->curriculum_slug){
+                            $curriculum->take_status = $taking->status;
+                            break;
+                        }else{
+                            $curriculum->take_status = "NOT";
+                        }
+                    }
+                }
+            }
+        }
+
         
         return $curriculums;
-
     }
+
 
     /**
      * 有効な全てのカリキュラムの取得
@@ -943,7 +964,7 @@ class CurriculumsController extends Controller
                                 })->
                                 count();
 
-        if ($required_count <= $end_count)
+        if ($required_count <= $end_count && $end_count>0 && $required_count>0)
         {
 
             $ret = true;
@@ -968,7 +989,7 @@ class CurriculumsController extends Controller
                         users.user_id,
                         users.user_name,
                         certificates.created_at,
-                        certificates.certified_date,
+			certificates.certified_date,
                         certificates.status
                     ')->
                     join('users', 'users.user_id', '=', 'certificates.user_id')->

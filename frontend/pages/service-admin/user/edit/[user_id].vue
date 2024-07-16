@@ -10,6 +10,11 @@
       <nav class="gnav">
         <ul class="gnav-list">
           <li class="gnav-item">
+              <NuxtLink to="/service-admin/dashboard/" class="gnav-link"
+                >修了証管理</NuxtLink
+              >
+          </li>
+          <li class="gnav-item">
             <NuxtLink to="/service-admin/categories/" class="gnav-link"
               >カテゴリ管理</NuxtLink
             >
@@ -36,7 +41,7 @@
           </li>
           <li class="gnav-item">
             <NuxtLink to="/service-admin/user" class="gnav-link"
-              >カテゴリ管理に戻る</NuxtLink
+              >ユーザー管理に戻る</NuxtLink
             >
           </li>
         </ul>
@@ -380,6 +385,11 @@ const update = async () => {
   if (error_message.value.innerHTML) {
     window.scroll({ top: 0, behavior: "smooth" });
   }
+};
+const { adminLogout } = useAuth();
+
+const logout = async () => {
+  adminLogout();
 };
 
 const init = async () => {

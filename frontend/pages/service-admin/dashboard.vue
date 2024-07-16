@@ -45,7 +45,7 @@
     </div>
     <div class="content">
       <div class="inner">
-        <section class="dashboard table-page">
+        <section class="dashboard mx-12">
         
           <h1 class="sec-title dashboard-title">
             修了証の申請があったユーザー
@@ -65,7 +65,7 @@
                   <tr class="h-[30px] text-[10px] md:text-[14px] whitespace-nowrap" v-for="(item, i) in user_data" :key="i" >
                     <td class="px-3 py-2" v-if="item.status==='R'">
                       <NuxtLink
-                        :to="`/service-admin/account/show/${item.user_id}`"
+                        :to="`/service-admin/user/show/${item.user_id}`"
                         class="u-text-decoration--underline"
                         >{{ item.user_name }}</NuxtLink
                       >
@@ -89,7 +89,7 @@
             
           </div>
         </section>
-        <section class="dashboard table-page">
+         <section class="dashboard mt-12 mx-12">
         
           <h1 class="sec-title dashboard-title">
             過去に修了証を申請した人
@@ -109,7 +109,7 @@
                   <tr class="h-[30px] text-[10px] md:text-[14px] whitespace-nowrap" v-for="(item, i) in user_data" :key="i">
                     <td class="px-3 py-2" v-if="item.status==='C'">
                       <NuxtLink
-                        :to="`/service-admin/account/show/${item.user_id}`"
+                        :to="`/service-admin/user/show/${item.user_id}`"
                         class="u-text-decoration--underline"
                         >{{ item.user_name }}</NuxtLink
                       >

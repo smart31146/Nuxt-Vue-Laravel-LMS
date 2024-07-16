@@ -9,6 +9,11 @@
     <div class="nav-area" :class="{ is_open: globlaStore.state.stateIsMenuOpen }">
       <nav class="gnav">
         <ul class="gnav-list">
+          <li class="gnav-item">
+              <NuxtLink to="/service-admin/dashboard/" class="gnav-link"
+                >修了証管理</NuxtLink
+              >
+          </li>
            <li class="gnav-item">
             <NuxtLink to="/service-admin/categories/" class="gnav-link"
               >カテゴリ管理</NuxtLink
@@ -447,6 +452,11 @@ const notifyChanging = (
       is_limited_type.value = true;
     }
   }
+};
+const { adminLogout } = useAuth();
+
+const logout = async () => {
+  adminLogout();
 };
 
 const init = async () => {

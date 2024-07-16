@@ -41,7 +41,9 @@
 							<MenuItem v-slot="{ active }">
 							  <NuxtLink href="/user" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-2xl text-gray-700']">ログイン</NuxtLink>
 							</MenuItem>
-							
+							<MenuItem v-slot="{ active }">
+							  <NuxtLink href="/user/registration" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-2xl text-gray-700']">会員登録</NuxtLink>
+							</MenuItem>
 						  </MenuItems>
 						</transition>
 					  </Menu>
