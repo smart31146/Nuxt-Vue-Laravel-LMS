@@ -267,6 +267,7 @@ export interface CardCurriculum
     curriculum_image: string | null | undefined;
     image_path: string;
     no_image_path: string;
+    take_status?: string;
 }
 
 export type DataType = CurriculumData | CategoryData | UserData |

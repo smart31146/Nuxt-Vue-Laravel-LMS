@@ -48,7 +48,7 @@
       <div class="inner">
         <section class="category table-page">
           <div class="flex justify-between items-center mb-4 p-4">
-            <h1 class="text-xl md:text-3xl lg:text-5xl category-title">カテゴリ管理</h1>
+            <h1 class="text-xl md:text-3xl lg:text-5xl category-title">カリキュラム管理</h1>
           
             <NuxtLink class="text-xl md:text-3xl lg:text-5xl" to="/service-admin/curriculums/create"
               >新規追加</NuxtLink

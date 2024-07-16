@@ -70,35 +70,35 @@
                 <i class="fa-solid fa-magnifying-glass fa-icon"></i>
               </button>
             </form>
-            <p class="u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem u-width--fit-content">受講可能な必修受講総数: {{ total_count }}、完了数: {{ total_completed }}、達成率: {{ completed_percent }}% </p>
-            <div class="table-area">
-              <div class="table-inner">
-                <table class="curriculum-table table table-body">
+            <p class="text-[15px] mb-2 ">受講可能な必修受講総数: {{ total_count }}、完了数: {{ total_completed }}、達成率: {{ completed_percent }}% </p>
+            <div class="overflow-x-auto mt-4 w-full">
+            
+                <table class="overflow-x-auto text-[10px] text-center border-2 border-customPink bg-white min-w-screen ">
                   <thead>
-                    <tr>
-                        <th>カリキュラム名</th>
-                        <th>カテゴリ名</th>
-                        <th>カリキュラム種別</th>
-                        <th>必修/任意</th>
-                        <th>受講開始日時</th>
-                        <th>受講終了日時</th>
-                        <th>進捗状況</th>
-                        <th>状態</th>
-                        <th></th>
+                    <tr class="p-2 h-[30px] text-[20px] text-customPink bg-[#5199f8] whitespace-nowrap text-white">
+                        <th class="px-3 py-1 border border-customPink">カリキュラム名</th>
+                        <th class="px-3 py-1 border border-customPink">カテゴリ名</th>
+                        <th class="px-3 py-1 border border-customPink">カリキュラム種別</th>
+                        <th class="px-3 py-1 border border-customPink">必修/任意</th>
+                        <th class="px-3 py-1 border border-customPink">受講開始日時</th>
+                        <th class="px-3 py-1 border border-customPink">受講終了日時</th>
+                        <th class="px-3 py-1 border border-customPink">進捗状況</th>
+                        <th class="px-3 py-1 border border-customPink">状態</th>
+                        <th class="px-3 py-1 border border-customPink"></th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="(item, i) in taking_curriculum_data" :key="i">
-                        <td><NuxtLink :to="`/user/curriculums/${item.curriculum_slug}`" class="u-text-decoration--underline">{{ item.curriculum_name }}</NuxtLink></td>
-                        <td>{{ item.category_name }}</td>
-                        <td>{{ CurriculumType.get(item.curriculum_type.toString()) }}</td>
-                        <td>{{ RequiredType.get(item.is_required.toString()) }}</td>
-                        <td>{{ dateTimeFormat(item.started_at).value }}</td>
-                        <td>{{ item.completed_at ? dateTimeFormat(item.completed_at).value  : '' }}</td>
-                        <td>{{ getPercentage(item.taking_curriculum_second, item.total_curriculum_second) }}%</td>
-                        <td>{{ TakingCurriculumStatus.get(item.status) }}</td>
-                        <td>
-                        <ul class="u-display--flex u-flex__gap--0_5rem">
+                    <tr class="p-2 h-[30px] "v-for="(item, i) in taking_curriculum_data" :key="i">
+                        <td class="px-3 py-1 border border-customPink"><NuxtLink :to="`/user/curriculums/${item.curriculum_slug}`" class="u-text-decoration--underline">{{ item.curriculum_name }}</NuxtLink></td>
+                        <td class="px-3 py-1 border border-customPink">{{ item.category_name }}</td>
+                        <td class="px-3 py-1 border border-customPink">{{ CurriculumType.get(item.curriculum_type.toString()) }}</td>
+                        <td class="px-3 py-1 border border-customPink">{{ RequiredType.get(item.is_required.toString()) }}</td>
+                        <td class="px-3 py-1 border border-customPink">{{ dateTimeFormat(item.started_at).value }}</td>
+                        <td class="px-3 py-1 border border-customPink">{{ item.completed_at ? dateTimeFormat(item.completed_at).value  : '' }}</td>
+                        <td class="px-3 py-1 border border-customPink">{{ getPercentage(item.taking_curriculum_second, item.total_curriculum_second) }}%</td>
+                        <td class="px-3 py-1 border border-customPink">{{ TakingCurriculumStatus.get(item.status) }}</td>
+                        <td class="px-3 py-1 border border-customPink">
+                        <ul class="flex gap-1">
                           <li>
                             <NuxtLink :to="`/user/curriculums/${item.curriculum_slug}`">
                                 <i class="fa-solid fa-circle-info fa-icon"></i
@@ -110,7 +110,7 @@
                     </tr>
                   </tbody>
                 </table>
-              </div>
+           
             </div>
           </section>
         </div>
@@ -248,7 +248,7 @@ const init = async () =>
     ]);
 
     taking_curriculum_data.value = taking_curriculum_object.value['data'];
-
+    console.log("test taking",taking_curriculum_data)
     total_count.value = achievement.value['total_count'];
     total_completed.value = achievement.value['total_completed'];
     completed_percent.value = achievement.value['completed_percent'];

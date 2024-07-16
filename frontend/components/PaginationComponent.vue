@@ -9,14 +9,14 @@ v-slot="slotProps"
 <ul
 v-bind="$attrs"
 aria-label="Pagination"
-class="u-margin-left--auto u-margin-right--auto u-margin-bottom--1_5rem u-width--fit-content u-display--flex u-flex__gap--0_5rem"
-v-if="slotProps.computed.total > slotProps.computed.perPage"
+class="m-auto mb-8  flex gap-2 mt-4 text-xl w-[fit-content] items-center justify-center"
+style="width: fit-content;"
 >
     <li>
     <button type="button"
     class="p-paging__link"
     :disabled="!slotProps.computed.prevPageUrl"
-    :class="!slotProps.computed.prevPageUrl? 'u-cursor--not-allowed' : 'u-cursor--pointer'"
+    :class="!slotProps.computed.prevPageUrl? 'cursor-not-allowed' : 'cursor-pointer'"
     v-on="slotProps.prevButtonEvents"
     >
         <slot name="prev-nav">
@@ -24,10 +24,10 @@ v-if="slotProps.computed.total > slotProps.computed.perPage"
         </slot>
     </button>
     </li>
-    <li class="u-display--flex u-flex__gap--0_5rem">
+    <li class="flex gap-2">
     <span
-        class="p-paging__link u-cursor--pointer"
-        :class="slotProps.computed.currentPage === page ? '' : 'p-paging--current'"
+        class="p-paging__link cursor-pointer rounded-full p-1 h-8 w-8 text-center"
+        :class="{'bg-blue-500 text-white': slotProps.computed.currentPage === page, 'hover:bg-blue-200': slotProps.computed.currentPage !== page}"
         v-for="(page, key) in slotProps.computed.pageRange"
         :key="key"
         v-on="slotProps.pageButtonEvents(page)"
@@ -39,7 +39,7 @@ v-if="slotProps.computed.total > slotProps.computed.perPage"
     <button
         class="p-paging__link"
         :disabled="!slotProps.computed.nextPageUrl"
-        :class="!slotProps.computed.nextPageUrl? 'u-cursor--not-allowed' : 'u-cursor--pointer'"
+        :class="!slotProps.computed.nextPageUrl? 'cursor-not-allowed' : 'cursor-pointer'"
         v-on="slotProps.nextButtonEvents"
     >
         <slot name="next-nav">

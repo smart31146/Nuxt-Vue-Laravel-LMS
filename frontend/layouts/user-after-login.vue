@@ -31,7 +31,9 @@
 					</div>
 					<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 					  <div class="flex flex-shrink-0 items-center">
-						<NuxtLink href="/user/dashboard" ><img class="h-8 w-auto" src="/images/logo-white.png" alt="LMSシステムのロゴ" /> </NuxtLink>
+						<NuxtLink href="/user/dashboard/" @click="deselectNavigation">
+							<img class="h-8 w-auto" src="/images/logo-white.png" alt="LMSシステムのロゴ" />
+						</NuxtLink>
 					  </div>
 					  
 					  <div class="hidden sm:ml-12 sm:block">
@@ -89,18 +91,19 @@
 <script setup lang="ts">
 	import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
     import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+	import { ref } from 'vue';
 	const route = useRoute()
-      const navigation = [
-      { name: 'ダッシュボード', href: '/user/dashboard', current: route.name=='user-dashboard' ? true : false },
-      { name: '受講履歴', href: '/user/curriculums', current: route.name=='user-curriculums' ? true : false },
-      { name: '終了証', href: '/user/certifications/', current: route.name=='user-certifications' ? true : false },
-      { name: 'プロフィール', href: '/user/profile', current: route.name=='user-profile' ? true : false },
-      ]
+   const navigation = ref([
+  { name: 'ダッシュボード', href: '/user/dashboard/', current: route.name == 'user-dashboard' ? true : false },
+  { name: '受講履歴', href: '/user/curriculums/', current: route.name == 'user-curriculums' ? true : false },
+  { name: '終了証', href: '/user/certifications/', current: route.name == 'user-certifications' ? true : false },
+  { name: 'プロフィール', href: '/user/profile/', current: route.name == 'user-profile' ? true : false },
+]);
 
 const isMenuOpen = ref(false);
 
 import store from '../store';
-import { ref } from 'vue';
+
 
 const stateIsMenuOpen = ref(store.state.stateIsMenuOpen);
 
@@ -117,4 +120,7 @@ const logout = async () =>
 	userLogout();
 
 }
+const deselectNavigation = () => {
+  navigation.value = navigation.value.map(item => ({ ...item, current: false }));
+};
 </script>

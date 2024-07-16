@@ -49,7 +49,7 @@
       <div class="inner">
         <section class="account table-page">
           <div class="flex justify-between items-center mb-4 p-4">
-            <h1 class="text-xl md:text-3xl lg:text-5xl category-title">カテゴリ管理</h1>
+            <h1 class="text-xl md:text-3xl lg:text-5xl category-title">管理者アカウント管理</h1>
           
             <NuxtLink class="text-xl md:text-3xl lg:text-5xl" to="/service-admin/account/create"
               >新規追加</NuxtLink

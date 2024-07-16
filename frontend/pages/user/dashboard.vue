@@ -114,6 +114,7 @@
             <CardCurriculumComponent
             mode="/user"
             :curriculum_slug="item.curriculum_slug"
+            :take_status="item.take_status"
             :curriculum_name="item.curriculum_name"
             :category_name="item.categories['category_name']"
             :curriculum_image="item.curriculum_image"
@@ -288,7 +289,7 @@ const init = async () =>
     fd.append('created_at', useToString(userInfo.value['created_at']).value.replace('T', ' '));
     fd.append('order_item', 'created_at');
     fd.append('order_by', 'DESC');
-   
+    fd.append('user_id', userInfo.value['user_id'].toString());
     
     [curriculum_object.value, category_all.value,category_data.value, curriculum_dir_path.value] = await Promise.all([
         getAllCurriculumData('user', 1, fd),
@@ -299,6 +300,7 @@ const init = async () =>
     
     
     curriculum_data.value = curriculum_object.value['data'];
+    console.log("test curriculum",curriculum_data.value )
     category_data.value = category_data.value['data']
     // category_data1.value = category_data.value
     image_path.value =curriculum_dir_path.value.image_path;
